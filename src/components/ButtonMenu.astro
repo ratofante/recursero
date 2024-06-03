@@ -1,0 +1,75 @@
+---
+interface Props {
+  classes?: string;
+}
+
+const { classes } = Astro.props;
+---
+
+<div class="relative w-14" class:list={[classes]}>
+  <button data-state="closed" id="navigation-menu" class="absolute right-0 top-1/2 -translate-y-1/2 w-14 h-12">
+    <div class="relative text-end font-semibold overflow-hidden md:text-lg">
+      <div class="relative menu-open transition-transform duration-300">Menu</div>
+      <div
+        class="dark:text-white absolute menu-close right-0 top-0 translate-y-full rotate-6 transition-transform duration-300"
+      >
+        Close
+      </div>
+    </div>
+  </button>
+</div>
+
+<script>
+  import useDispatchEvent from '../js/useDispatchEvent';
+  import type { EventDetail } from '../types';
+
+  const openCommand: EventDetail = {
+    command: 'open',
+  };
+  const closeCommand: EventDetail = {
+    command: 'close',
+  };
+
+  const menuBtn = document.getElementById('navigation-menu') as HTMLElement | null;
+  const menu = menuBtn?.querySelector('.menu-open') as HTMLElement | null;
+  const close = menuBtn?.querySelector('.menu-close') as HTMLElement | null;
+
+  function setMenuToOpen() {
+    if (menuBtn && menuBtn.dataset) {
+      menu?.classList.add('-translate-y-full', '-rotate-6');
+      close?.classList.remove('translate-y-full', 'rotate-6');
+      menuBtn.dataset.state = 'open';
+    }
+  }
+
+  function setMenuToClose() {
+    if (menuBtn && menuBtn.dataset) {
+      menu?.classList.remove('-translate-y-full', '-rotate-6');
+      close?.classList.add('translate-y-full', 'rotate-6');
+      menuBtn.dataset.state = 'closed';
+    }
+  }
+
+  function openMenu() {
+    setMenuToOpen();
+    useDispatchEvent('mobileMenuToggle', openCommand);
+  }
+
+  function closeMenu() {
+    setMenuToClose();
+    useDispatchEvent('mobileMenuToggle', closeCommand);
+  }
+
+  function toggleMenu() {
+    menuBtn?.dataset.state === 'closed' ? openMenu() : closeMenu();
+  }
+
+  function onResize() {
+    if (window.innerWidth >= 640 && menuBtn?.dataset.state === 'open') {
+      closeMenu();
+    }
+  }
+
+  menuBtn?.addEventListener('mousedown', toggleMenu);
+  window.addEventListener('resize', onResize);
+</script>

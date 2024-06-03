@@ -1,0 +1,31 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import MainLayout from '@layouts/MainLayout.astro';
+import HomeHero from '@components/Sections/HomeHero.astro';
+import Divisor from '@components/Elements/Divisor.astro';
+---
+
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<HomeHero />
+	<Divisor
+		image={{
+			path: '/src/assets/images/tools__background.jpg',
+			alt: 'Recursero, colección de elementos pedagógicos',
+		}}
+	/>
+	<HomeHero />
+	<Divisor
+		image={{
+			path: '/src/assets/images/tools__background.jpg',
+			alt: 'Recursero, colección de elementos pedagógicos',
+		}}
+	/>
+	<HomeHero />
+	<Divisor
+		image={{
+			path: '/src/assets/images/tools__background.jpg',
+			alt: 'Recursero, colección de elementos pedagógicos',
+		}}
+	/>
+</MainLayout>

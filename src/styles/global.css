@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-white dark:bg-black text-slate dark:text-white dark:text-opacity-85 transition-colors;
+	}
+	/* .container {
+		@apply border;
+	} */
+	section {
+		@apply py-8 lg:py-14 2xl:py-28;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-serif font-extrabold tracking-tight text-black dark:text-white;
+	}
+	.text-block {
+		@apply max-w-screen-sm 2xl:max-w-screen-md;
+	}
+	.text-block .tagname {
+		@apply inline-block pb-2 sm:pb-3 2xl:pb-4 uppercase font-semibold text-slate dark:text-primary dark:text-opacity-90 text-xs sm:text-sm 2xl:text-base tracking-wide;
+	}
+	.text-block .title {
+		@apply capitalize text-3xl sm:text-4xl 2xl:text-6xl pb-2 sm:pb-3 2xl:pb-4;
+	}
+	.text-block .copy {
+		@apply text-base pb-4 sm:pb-4 2xl:pb-6 sm:text-lg 2xl:text-[20px] leading-6 2xl:leading-8;
+	}
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
+}

@@ -1,0 +1,21 @@
+---
+import ContainerBase from '@components/ContainerBase.astro';
+import Link from '@components/Link/Link.astro';
+---
+
+<section>
+	<ContainerBase>
+		<span class="tagname uppercase text-xs md:text-sm 2xl:text-lg font-bold tracking-wide opacity-80">
+			contenido educacional
+		</span>
+		<h1 class="heading-1 text-5xl tracking-tighter mb-6 mt-4 md:text-6xl lg:text-7xl 2xl:text-8xl">
+			Recursos para <br />la pedagogía
+		</h1>
+		<p
+			class="body-large text-lg mb-6 leading-8 max-w-[420px] md:text-xl md:leading-[2.25rem] lg:max-w-[520px] 2xl:text-2xl 2xl:leading-[2.75rem]"
+		>
+			Un proyecto para organizar, promover y difundir recursos, planificaciones e ideas para la pedagogía escolar.
+		</p>
+		<Link text="Ir la Blog" href="/blog" icon={{ name: 'ion:arrow-right-c', side: 'right' }} />
+	</ContainerBase>
+</section>

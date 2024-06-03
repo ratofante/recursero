@@ -1,0 +1,24 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+interface Props {
+	image: {
+		path: string;
+		alt: string;
+	};
+}
+const { image }: Props = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpeg,jpg,png,gif}');
+if (!images[image.path])
+	throw new Error(`"${image.path}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`);
+---
+
+<div class="divider my-8 lg:my-14 2xl:my-28 mx-auto max-w-screen-2xl min-h overflow-hidden">
+	<Image src={images[image.path]()} alt={image.alt} quality={80} class="h-full w-full object-cover object-center" />
+</div>
+
+<style>
+	.divider {
+		height: max(25vh, 420px);
+	}
+</style>

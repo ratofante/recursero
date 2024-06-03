@@ -1,0 +1,40 @@
+{
+  "name": "blog-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write \"src/**/*.astro\""
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/rss": "^4.0.6",
+    "@astrojs/sitemap": "^3.1.5",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.9.1",
+    "astro-icon": "^1.1.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@iconify-json/ion": "^1.1.18",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "@astrojs/tailwind": "5.1.0",
+    "@eslint/js": "^9.2.0",
+    "@types/eslint__js": "^8.42.3",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "astro-eslint-parser": "^1.0.2",
+    "eslint-plugin-astro": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.9.0",
+    "globals": "^15.2.0"
+  }
+}

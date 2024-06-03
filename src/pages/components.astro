@@ -1,0 +1,38 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import MainLayout from '@layouts/MainLayout.astro';
+import Link from '@components/Link/Link.astro';
+---
+
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<div class="container">
+		<div class="text-block my-8 lg:my-16 2xl:my-24">
+			<span class="tagname"> this is a tagname </span>
+			<h3 class="title">with a compeling title</h3>
+			<p class="copy">
+				El copywriting es el arte y la ciencia de escribir textos persuasivos con el objetivo de promocionar
+				productos, servicios o ideas. Su propósito principal es captar la atención del lector, generar interés y
+				motivar una acción específica, como una compra o una suscripción. Es una habilidad esencial en marketing
+				y publicidad, ya que busca conectar emocionalmente con el público y convertirlo en clientes potenciales.
+			</p>
+			<div class="flex gap-4">
+				<Link href="/" text="Start Now" borderVisible={true} isFilled={false} />
+				<Link href="/" text="Go Home" icon={{ name: 'ion:arrow-forward-outline', side: 'right' }} />
+			</div>
+		</div>
+		<div class="text-block my-8 lg:my-16 2xl:my-24">
+			<span class="tagname"> dm sans tagname </span>
+			<h3 class="title">lexend title</h3>
+			<p class="copy max-w-[460px]">
+				A commercial license, in the context of GSAP (GreenSock Animation Platform), refers to a type of license
+				that allows you to use the software for commercial purposes. This typically includes the following
+				scenarios:
+			</p>
+			<div class="flex gap-4">
+				<Link href="/" text="Started" icon={{ name: 'ion:checkmark-done', side: 'left' }} />
+				<Link href="/" text="More Info" isFilled={false} borderVisible={true} />
+			</div>
+		</div>
+	</div>
+</MainLayout>
