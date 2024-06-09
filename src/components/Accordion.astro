@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+	label: string;
+	classes?: string;
+}
+
+const { label, classes } = Astro.props;
+---
+
+<div class="accordion" class:list={[classes]}>
+	<div class="accordion__label cursor-pointer flex justify-between items-start">
+		<div>
+			{label}
+		</div>
+		<div class="accordion__icon relative grid place-items-center">
+			<Icon name="ion:plus-round" width={18} height={18} class="accordion__icon accordion__icon__closed" />
+			<Icon
+				name="ion:minus-round"
+				class="absolute accordion__icon accordion__icon__open"
+				width={18}
+				height={18}
+			/>
+		</div>
+	</div>
+	<div class="accordion__content overflow-hidden">
+		<slot />
+	</div>
+</div>
+
+<style>
+	.accordion {
+		display: grid;
+		grid-template-rows: auto 0fr;
+		transition: grid-template-rows 300ms;
+	}
+	.accordion.open {
+		grid-template-rows: auto 1fr;
+	}
+	.accordion__icon {
+		transition-property: opacity;
+		transition: 300ms;
+	}
+	.accordion.open .accordion__icon {
+		transform: rotate(180deg);
+	}
+	.accordion:not(.open) .accordion__icon__open {
+		opacity: 0;
+	}
+	.accordion.open .accordion__icon__closed {
+		opacity: 0;
+	}
+</style>
+
+<script>
+	const accordions: NodeListOf<Element> = document.querySelectorAll('.accordion');
+	accordions.forEach((accordion) => {
+		const accordionTrigger = accordion.querySelector('.accordion__label') as HTMLElement | null;
+		function toggleAccordion() {
+			accordion.classList.toggle('open');
+		}
+		accordionTrigger?.addEventListener('click', toggleAccordion);
+	});
+</script>

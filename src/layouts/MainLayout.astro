@@ -19,16 +19,43 @@ const { title, description } = Astro.props;
 	</head>
 	<body class="max-w-screen overflow-x-hidden lg:max-h-screen lg:h-screen lg:overflow-hidden">
 		<HeaderMobile classes="lg:hidden" />
-		<div class="desktop__grid lg:grid lg:grid-cols-12 h-screen grid-rows-12">
-			<HeaderDesktop classes="row-span-1 col-span-12" />
+		<div class="layout__grid open lg:grid lg:grid-cols-12 h-screen grid-rows-12">
+			<HeaderDesktop classes="lg:block hidden row-span-1 col-span-12" />
 			<NavigationDesktop classes="hidden lg:block col-start-1 col-end-4 row-start-2 row-span-11" />
 			<main
 				id="page-content"
-				class="relative mx-auto lg:mx-0 min-h-screen pt-32 max lg:col-start-4 lg:col-end-13 row-start-2 row-span-11 overflow-y-scroll"
+				class="relative pl-0 w-screen lg:w-auto mx-auto lg:mx-0 min-h-screen pt-32 max lg:col-start-4 lg:col-end-13 row-start-2 row-span-11 overflow-y-scroll"
 			>
 				<slot />
 			</main>
 		</div>
 		<Footer />
+		<style>
+			.layout__grid {
+				transition: grid-template-columns 300ms;
+			}
+			@media (min-width: 1024px) {
+				.layout__grid {
+					grid-template-columns: repeat(3, minmax(0, 18px)) 1fr;
+				}
+				.layout__grid.open {
+					grid-template-columns: repeat(3, minmax(0, 128px)) 1fr;
+				}
+			}
+		</style>
+		<script>
+			import type { CustomEventWithDetail } from 'src/types';
+
+			const layoutGrid = document.querySelector('.layout__grid') as HTMLElement | null;
+			const handleToggler = (ev: CustomEventWithDetail<{ command: string }>) => {
+				if (ev.detail.command === 'collapse') {
+					layoutGrid?.classList.remove('open');
+				}
+				if (ev.detail.command === 'expand') {
+					layoutGrid?.classList.add('open');
+				}
+			};
+			window.addEventListener('toggle-desktop-menu', handleToggler as EventListener);
+		</script>
 	</body>
 </html>

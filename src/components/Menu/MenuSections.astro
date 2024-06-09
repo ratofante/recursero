@@ -1,0 +1,27 @@
+---
+import ContainerBase from '@components/Container/ContainerBase.astro';
+import Accordion from '@components/Accordion.astro';
+---
+
+<ContainerBase classes="px-4">
+	<!-- Sections -->
+	<div class="text-lg flex flex-col gap-2">
+		<a href="" class="py-2"> Inicio </a>
+		<Accordion label="El Proyecto" classes="py-2">
+			<div class="flex flex-col text-base pt-2 pb-4">
+				<a href="" class="py-1">Psicología Educacional</a>
+				<a href="" class="py-1">Eduación Sexual Integral</a>
+				<a href="" class="py-1">Educación Especial</a>
+			</div>
+		</Accordion>
+		<Accordion label="Blog" classes="py-2">
+			<div class="flex flex-col text-base pt-2 pb-4">
+				<a href="" class="py-1">Psicología Educacional</a>
+				<a href="" class="py-1">Eduación Sexual Integral</a>
+				<a href="" class="py-1">Educación Especial</a>
+			</div>
+		</Accordion>
+		<a href="" class="py-2"> FAQ </a>
+		<a href="" class="py-2"> Contacto </a>
+	</div>
+</ContainerBase>
