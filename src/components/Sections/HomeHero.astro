@@ -16,6 +16,44 @@ import Link from '@components/Link/Link.astro';
 		>
 			Un proyecto para organizar, promover y difundir recursos, planificaciones e ideas para la pedagogía escolar.
 		</p>
-		<Link text="Ir la Blog" href="/blog" icon={{ name: 'ion:arrow-right-c', side: 'right' }} />
+		<Link
+			href="/blog"
+			label="Ir la Blog"
+			type="primary"
+			size="lg"
+			icon={{ name: 'ion:arrow-right-c', type: 'trailing' }}
+		/>
+		<Link
+			href="/blog"
+			label="Ver resultados"
+			type="secondary"
+			size="lg"
+			icon={{ name: 'ion:arrow-right-c', type: 'leading' }}
+			classes="my-2"
+		/>
+		<Link
+			href="/blog"
+			label="Ver resultados"
+			type="tertiary"
+			size="lg"
+			icon={{ name: 'ion:arrow-right-c', type: 'leading' }}
+			classes="my-2"
+		/>
+		<Link
+			href="/blog"
+			label="Ver resultados"
+			type="secondary"
+			size="lg"
+			icon={{ name: 'ion:arrow-right-c', type: 'icon' }}
+			classes="my-2"
+		/>
+		<Link
+			href="/blog"
+			label="Ver resultados"
+			type="destructive"
+			size="lg"
+			icon={{ name: 'ion:trash', type: 'trailing' }}
+			classes="my-2"
+		/>
 	</ContainerBase>
 </section>

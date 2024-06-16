@@ -2,33 +2,46 @@
 import { Icon } from 'astro-icon/components';
 
 interface Props {
-	text: string;
+	label: string;
 	href: string;
 	icon?: {
 		name: string;
-		side: 'left' | 'right';
+		type: 'leading' | 'trailing' | 'icon';
 	};
-	isFilled?: boolean;
-	borderVisible?: boolean;
+	type: 'primary' | 'secondary' | 'tertiary' | 'destructive';
+	size: 'xs' | 'sm' | 'md' | 'lg';
 	classes?: string;
 }
 
-const { text, href, icon, isFilled = true, borderVisible = false, classes, ...rest } = Astro.props as Props;
+const { label, href, icon, type, size, classes, ...rest } = Astro.props as Props;
 ---
 
 <a
 	href={href}
-	class="flex items-center gap-2 font-semibold w-fit px-4 py-2 rounded"
+	class="flex items-center gap-2 font-semibold w-fit rounded px-4"
 	class:list={[
-		'link',
 		classes,
-		{ 'text-white bg-primary': isFilled, 'border-2 border-primary text-primary': borderVisible },
+		{
+			'text-white bg-primary': type === 'primary',
+			'border-2 border-primary text-primary': type === 'secondary',
+			'': type === 'tertiary',
+			'py-0 px-0 aspect-square gap-0 justify-center': icon && icon.type === 'icon',
+			'border-2 border-danger text-danger': type === 'destructive',
+			'h-6': size === 'xs',
+			'h-7': size === 'sm',
+			'h-8': size === 'md',
+			'h-10': size === 'lg',
+		},
 	]}
 	{...rest}
 >
-	{icon && icon.side === 'left' && <Icon name={icon.name} height={16} width={16} />}
+	{
+		((icon && icon.type === 'leading') || icon?.type === 'icon') && (
+			<Icon name={icon.name} height={16} width={16} class:list={[{ absolute: icon && icon.type === 'icon' }]} />
+		)
+	}
 
-	<span>{text}</span>
+	<span class:list={[{ 'sr-only': icon && icon.type === 'icon' }]}>{label}</span>
 
-	{icon && icon.side === 'right' && <Icon name={icon.name} height={16} width={16} />}
+	{icon && icon.type === 'trailing' && <Icon name={icon.name} height={16} width={16} />}
 </a>
