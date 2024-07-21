@@ -17,8 +17,45 @@ import Link from '@components/Link/Link.astro';
 				y publicidad, ya que busca conectar emocionalmente con el público y convertirlo en clientes potenciales.
 			</p>
 			<div class="flex gap-4">
-				<Link href="/" text="Start Now" borderVisible={true} isFilled={false} />
-				<Link href="/" text="Go Home" icon={{ name: 'ion:arrow-forward-outline', side: 'right' }} />
+				<Link
+					href="/blog"
+					label="Ir la Blog"
+					type="primary"
+					size="lg"
+					icon={{ name: 'ion:arrow-right-c', type: 'trailing' }}
+				/>
+				<Link
+					href="/blog"
+					label="Ver resultados"
+					type="secondary"
+					size="lg"
+					icon={{ name: 'ion:arrow-right-c', type: 'leading' }}
+					classes="my-2"
+				/>
+				<Link
+					href="/blog"
+					label="Ver resultados"
+					type="tertiary"
+					size="lg"
+					icon={{ name: 'ion:arrow-right-c', type: 'leading' }}
+					classes="my-2"
+				/>
+				<Link
+					href="/blog"
+					label="Ver resultados"
+					type="secondary"
+					size="lg"
+					icon={{ name: 'ion:arrow-right-c', type: 'icon' }}
+					classes="my-2"
+				/>
+				<Link
+					href="/blog"
+					label="Ver resultados"
+					type="destructive"
+					size="lg"
+					icon={{ name: 'ion:trash', type: 'trailing' }}
+					classes="my-2"
+				/>
 			</div>
 		</div>
 		<div class="text-block my-8 lg:my-16 2xl:my-24">
@@ -29,10 +66,6 @@ import Link from '@components/Link/Link.astro';
 				that allows you to use the software for commercial purposes. This typically includes the following
 				scenarios:
 			</p>
-			<div class="flex gap-4">
-				<Link href="/" text="Started" icon={{ name: 'ion:checkmark-done', side: 'left' }} />
-				<Link href="/" text="More Info" isFilled={false} borderVisible={true} />
-			</div>
 		</div>
 	</div>
 </MainLayout>
