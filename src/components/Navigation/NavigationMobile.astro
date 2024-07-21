@@ -1,24 +1,18 @@
 ---
-import MenuSections from './Menu/MenuSections.astro';
-import MenuFooter from './Menu/MenuFooter.astro';
+import Navigation from './Navigation.astro';
 ---
 
-<nav
+<div
 	data-state="close"
 	id="mobile-menu"
-	class="fixed bg-primary dark:bg-secondary top-0 h-screen right-0 left-0 z-40 overflow-hidden transition-opacity duration-300 opacity-0 pointer-events-none"
+	class="fixed bg-white pt-[--header-height] dark:bg-secondary top-0 h-screen right-0 left-0 z-30 opacity-0 pointer-events-none overflow-hidden transition-opacity duration-300"
 >
-	<div class="container flex flex-col justify-between h-full pb-16 pt-24">
-		<div class="mb-8 flex-grow-0 overflow-y-auto overflow-x-hidden max-h- flex flex-col justify-between h-full">
-			<MenuSections />
-		</div>
-		<div class="border-t-2 h-32 border-white mt-auto py-4 text-xs">
-			<MenuFooter />
-		</div>
+	<div class="pt-8">
+		<Navigation />
 	</div>
-</nav>
+</div>
 <script>
-	import type { CustomEventWithDetail } from '../types';
+	import type { CustomEventWithDetail } from '../../types';
 
 	const page = document.getElementById('page-content') as HTMLElement | null;
 	const menu = document.getElementById('mobile-menu') as HTMLElement | null;

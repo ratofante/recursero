@@ -13,21 +13,7 @@ const { classes }: Props = Astro.props;
 ---
 
 <div class:list={[classes]}>
-	<div class="h-full bg-slate">
-		<ContainerBase classes="px-4 py-4">
-			<button
-				id="menu-desktop-toggler"
-				data-state="expanded"
-				class="flex w-full justify-end cursor-pointer hover:bg-opacity-30 bg-opacity-0 bg-gray transition-all rounded-md hover:pr-2"
-			>
-				<div class="h-8 w-8">
-					<div class="relative h-full w-full flex justify-center items-center">
-						<Icon name="ion:chevron-back" width={22} height={22} class="absolute right-1" />
-						<Icon name="ion:chevron-back" width={22} height={22} class="absolute left-4" />
-					</div>
-				</div>
-			</button>
-		</ContainerBase>
+	<div class="h-full border-r border-slate py-4">
 		<div class="h-full flex flex-col justify-between pt-4 pb-8">
 			<MenuSections />
 			<MenuFooter classes="border-t border-gray pt-8 pb-8" />

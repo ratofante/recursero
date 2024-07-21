@@ -1,9 +1,8 @@
 ---
+import NavigationMobile from '@components/Navigation/NavigationMobile.astro';
 import BaseHead from '../components/BaseHead.astro';
-import HeaderMobile from '../components/HeaderMobile.astro';
-import Footer from '../components/Footer.astro';
-import NavigationDesktop from '@components/NavigationDesktop.astro';
-import HeaderDesktop from '@components/HeaderDesktop.astro';
+import Header from '../components/Header.astro';
+import Navigation from '@components/Navigation/Navigation.astro';
 interface Props {
 	title: string;
 	description: string;
@@ -17,45 +16,24 @@ const { title, description } = Astro.props;
 	<head>
 		<BaseHead {title} {description} />
 	</head>
-	<body class="max-w-screen overflow-x-hidden lg:max-h-screen lg:h-screen lg:overflow-hidden">
-		<HeaderMobile classes="lg:hidden" />
-		<div class="layout__grid open lg:grid lg:grid-cols-12 h-screen grid-rows-12">
-			<HeaderDesktop classes="lg:block hidden row-span-1 col-span-12" />
-			<NavigationDesktop classes="hidden lg:block col-start-1 col-end-4 row-start-2 row-span-11" />
-			<main
-				id="page-content"
-				class="relative pl-0 w-screen lg:w-auto mx-auto lg:mx-0 min-h-screen pt-32 max lg:col-start-4 lg:col-end-13 row-start-2 row-span-11 overflow-y-scroll"
-			>
+	<body class="max-w-screen overflow-x-hidden">
+		<Header />
+		<!-- <Navigation /> -->
+		<main
+			id="page-content"
+			class="relative flex flex-col lg:grid grid-cols-10 gap-2 xl:gap-8 max-w-7xl mx-auto px-2 sm:px-4 md:px-8 lg:px-0"
+		>
+			<!-- Aside Desktop Menu -->
+			<div class="lg:col-span-2">
+				<aside class="hidden lg:block lg:sticky top-[--header-height] pt-8">
+					<Navigation />
+				</aside>
+			</div>
+			<!-- Page Content -->
+			<div class="lg:col-span-8 pt-8 mt-[--header-height]">
 				<slot />
-			</main>
-		</div>
-		<Footer />
-		<style>
-			.layout__grid {
-				transition: grid-template-columns 300ms;
-			}
-			@media (min-width: 1024px) {
-				.layout__grid {
-					grid-template-columns: repeat(3, minmax(0, 18px)) 1fr;
-				}
-				.layout__grid.open {
-					grid-template-columns: repeat(3, minmax(0, 128px)) 1fr;
-				}
-			}
-		</style>
-		<script>
-			import type { CustomEventWithDetail } from 'src/types';
-
-			const layoutGrid = document.querySelector('.layout__grid') as HTMLElement | null;
-			const handleToggler = (ev: CustomEventWithDetail<{ command: string }>) => {
-				if (ev.detail.command === 'collapse') {
-					layoutGrid?.classList.remove('open');
-				}
-				if (ev.detail.command === 'expand') {
-					layoutGrid?.classList.add('open');
-				}
-			};
-			window.addEventListener('toggle-desktop-menu', handleToggler as EventListener);
-		</script>
+			</div>
+		</main>
+		<NavigationMobile />
 	</body>
 </html>

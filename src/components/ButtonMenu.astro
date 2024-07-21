@@ -65,7 +65,7 @@ const { classes } = Astro.props;
 	}
 
 	function onResize() {
-		if (window.innerWidth >= 640 && menuBtn?.dataset.state === 'open') {
+		if (window.innerWidth >= 1024 && menuBtn?.dataset.state === 'open') {
 			closeMenu();
 		}
 	}
