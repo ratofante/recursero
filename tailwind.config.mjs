@@ -23,6 +23,7 @@ export default {
 			colors: {
 				primary: '#796F83',
 				secondary: '#11051d',
+				danger: '#ec5c6f',
 				white: '#FCF9FF',
 				slate: '#323232',
 				gray: '#6C6C6C',

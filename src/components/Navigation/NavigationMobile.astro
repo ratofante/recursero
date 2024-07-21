@@ -1,0 +1,37 @@
+---
+import Navigation from './Navigation.astro';
+---
+
+<div
+	data-state="close"
+	id="mobile-menu"
+	class="fixed bg-white pt-[--header-height] dark:bg-secondary top-0 h-screen right-0 left-0 z-30 opacity-0 pointer-events-none overflow-hidden transition-opacity duration-300"
+>
+	<div class="pt-8">
+		<Navigation />
+	</div>
+</div>
+<script>
+	import type { CustomEventWithDetail } from '../../types';
+
+	const page = document.getElementById('page-content') as HTMLElement | null;
+	const menu = document.getElementById('mobile-menu') as HTMLElement | null;
+
+	function openMenu() {
+		menu?.classList.remove('opacity-0', 'pointer-events-none');
+		page?.classList.add('pointer-events-none');
+		if (menu && menu.dataset) menu.dataset.state = 'open';
+	}
+
+	function closeMenu() {
+		menu?.classList.add('opacity-0', 'pointer-events-none');
+		page?.classList.remove('pointer-events-none');
+		if (menu && menu.dataset) menu.dataset.state = 'close';
+	}
+
+	function mobileMenuToggle(ev: CustomEventWithDetail<{ command: string }>) {
+		if (ev.detail.command === 'open') openMenu();
+		if (ev.detail.command === 'close') closeMenu();
+	}
+	window.addEventListener('mobileMenuToggle', mobileMenuToggle as EventListener);
+</script>

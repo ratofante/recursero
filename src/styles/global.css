@@ -1,15 +1,13 @@
 @tailwind base;
 @tailwind utilities;
 
+:root {
+	--header-height: 4rem;
+}
+
 @layer base {
 	body {
 		@apply bg-white dark:bg-black text-slate dark:text-white dark:text-opacity-85 transition-colors;
-	}
-	/* .container {
-		@apply border;
-	} */
-	section {
-		@apply py-8 lg:py-14 2xl:py-28;
 	}
 	h1,
 	h2,

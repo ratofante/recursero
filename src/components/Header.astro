@@ -2,8 +2,6 @@
 import ButtonMenu from './ButtonMenu.astro';
 import ButtonSearch from './ButtonSearch.astro';
 import ButtonTheme from './ButtonTheme.astro';
-import ContainerBase from './ContainerBase.astro';
-import NavigationMobile from './NavigationMobile.astro';
 
 interface Props {
 	classes?: string;
@@ -11,11 +9,11 @@ interface Props {
 const { classes }: Props = Astro.props;
 ---
 
-<header class="fixed left-0 top-0 right-0 z-40" class:list={[classes]}>
-	<nav
-		class="bg-white h-14 dark:bg-black border-b-4 border-secondary dark:border-primary rounded-b-md dark:shadow-none shadow-sm shadow-gray relative z-50"
+<header class="fixed h-[--header-height] left-0 top-0 right-0 z-40" class:list={[classes]}>
+	<div
+		class="max-w-7xl mx-auto px-2 sm:px-4 md:px-8 lg:px-2 bg-white h-full dark:bg-black border-b-4 border-secondary dark:border-primary rounded-b-md dark:shadow-none shadow-sm shadow-gray relative z-50"
 	>
-		<ContainerBase classes="h-full flex justify-between items-center">
+		<div class="h-full flex justify-between items-center">
 			<!-- Logo -->
 			<div class="w-6 h-6 relative grid place-items-center">
 				<a
@@ -31,7 +29,6 @@ const { classes }: Props = Astro.props;
 				<ButtonTheme />
 			</div>
 			<ButtonMenu classes="lg:hidden" />
-		</ContainerBase>
-	</nav>
-	<NavigationMobile />
+		</div>
+	</div>
 </header>
