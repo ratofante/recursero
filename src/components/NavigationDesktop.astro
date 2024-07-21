@@ -1,9 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
-
-import ContainerBase from '@components/Container/ContainerBase.astro';
-import MenuFooter from '@components/Menu/MenuFooter.astro';
-import MenuSections from '@components/Menu/MenuSections.astro';
+import NavigationSections from '@components/Navigation/NavigationSections.astro';
 
 interface Props {
 	classes?: string;
@@ -15,8 +11,7 @@ const { classes }: Props = Astro.props;
 <div class:list={[classes]}>
 	<div class="h-full border-r border-slate py-4">
 		<div class="h-full flex flex-col justify-between pt-4 pb-8">
-			<MenuSections />
-			<MenuFooter classes="border-t border-gray pt-8 pb-8" />
+			<NavigationSections />
 		</div>
 	</div>
 </div>
