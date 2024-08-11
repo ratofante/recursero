@@ -1,8 +1,15 @@
 ---
+// Components
 import NavigationLink from '@components/Navigation/NavigationLink.astro';
 import NavigationButton from '@components/Navigation/NavigationButton.astro';
 import Accordion from '@components/Accordion.astro';
+
+// Libraries
 import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+
+const ejesTematicos = await getCollection('ejes-tematicos');
+const root = new URL(Astro.request.url).origin;
 ---
 
 <!-- Sections -->
@@ -38,11 +45,15 @@ import { Icon } from 'astro-icon/components';
 		<NavigationButton slot="trigger" name="Blog" leadingIcon="ion:md-bookmarks" trailingIcon="ion:chevron-down" />
 		<ul slot="content" class="pl-4">
 			<li>
-				<NavigationLink to="/" name="Indice" leadingIcon="ion:book" size="small" />
+				<NavigationLink to="/blog" name="Inicio" size="small" />
 			</li>
-			<li>
-				<NavigationLink to="/" name="ESI" leadingIcon="ion:accessibility" size="small" />
-			</li>
+			{
+				ejesTematicos.map((eje) => (
+					<li>
+						<NavigationLink to={`${root}/${eje.data.slug}/1`} name={eje.data.title} size="small" />
+					</li>
+				))
+			}
 		</ul>
 	</Accordion>
 	<Accordion>

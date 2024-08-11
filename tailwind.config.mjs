@@ -27,6 +27,7 @@ export default {
 				white: '#FCF9FF',
 				slate: '#323232',
 				gray: '#6C6C6C',
+				'light-gray': '#e8e5ed',
 				black: '#171717',
 			},
 		},

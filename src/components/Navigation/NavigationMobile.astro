@@ -5,9 +5,9 @@ import Navigation from './Navigation.astro';
 <div
 	data-state="close"
 	id="mobile-menu"
-	class="fixed bg-white pt-[--header-height] dark:bg-secondary top-0 h-screen right-0 left-0 z-30 opacity-0 pointer-events-none overflow-hidden transition-opacity duration-300"
+	class="pointer-events-none fixed left-0 right-0 top-0 z-30 h-screen overflow-hidden bg-white pt-[--header-height] opacity-0 transition-opacity duration-300 dark:bg-secondary"
 >
-	<div class="pt-8">
+	<div class="mx-auto max-w-2xl pt-8">
 		<Navigation />
 	</div>
 </div>

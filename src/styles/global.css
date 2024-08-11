@@ -7,7 +7,7 @@
 
 @layer base {
 	body {
-		@apply bg-white dark:bg-black text-slate dark:text-white dark:text-opacity-85 transition-colors;
+		@apply bg-white text-slate transition-colors dark:bg-black dark:text-white dark:text-opacity-85;
 	}
 	h1,
 	h2,
@@ -17,17 +17,24 @@
 	h6 {
 		@apply font-serif font-extrabold tracking-tight text-black dark:text-white;
 	}
+	.text-body {
+		@apply text-balance text-base tracking-wide lg:text-lg dark:font-extralight;
+	}
+	p,
+	li {
+		@apply text-body;
+	}
 	.text-block {
 		@apply max-w-screen-sm 2xl:max-w-screen-md;
 	}
 	.text-block .tagname {
-		@apply inline-block pb-2 sm:pb-3 2xl:pb-4 uppercase font-semibold text-slate dark:text-primary dark:text-opacity-90 text-xs sm:text-sm 2xl:text-base tracking-wide;
+		@apply inline-block pb-2 text-xs font-semibold uppercase tracking-wide text-slate sm:pb-3 sm:text-sm 2xl:pb-4 2xl:text-base dark:text-primary dark:text-opacity-90;
 	}
 	.text-block .title {
-		@apply capitalize text-3xl sm:text-4xl 2xl:text-6xl pb-2 sm:pb-3 2xl:pb-4;
+		@apply pb-2 text-3xl capitalize sm:pb-3 sm:text-4xl 2xl:pb-4 2xl:text-6xl;
 	}
 	.text-block .copy {
-		@apply text-base pb-4 sm:pb-4 2xl:pb-6 sm:text-lg 2xl:text-[20px] leading-6 2xl:leading-8;
+		@apply pb-4 text-base leading-6 sm:pb-4 sm:text-lg 2xl:pb-6 2xl:text-[20px] 2xl:leading-8;
 	}
 }
 
