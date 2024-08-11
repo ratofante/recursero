@@ -9,22 +9,22 @@ interface Props {
 const { classes }: Props = Astro.props;
 ---
 
-<header class="fixed h-[--header-height] left-0 top-0 right-0 z-40" class:list={[classes]}>
+<header class="fixed left-0 right-0 top-0 z-40 h-[--header-height]" class:list={[classes]}>
 	<div
-		class="max-w-7xl mx-auto px-2 sm:px-4 md:px-8 lg:px-2 bg-white h-full dark:bg-black border-b-4 border-secondary dark:border-primary rounded-b-md dark:shadow-none shadow-sm shadow-gray relative z-50"
+		class="relative z-50 mx-auto h-full max-w-2xl rounded-b-md border-b-4 border-secondary bg-white px-2 shadow-sm shadow-gray sm:px-4 md:px-8 lg:max-w-7xl lg:px-2 dark:border-primary dark:bg-black dark:shadow-none"
 	>
-		<div class="h-full flex justify-between items-center">
+		<div class="flex h-full items-center justify-between">
 			<!-- Logo -->
-			<div class="w-6 h-6 relative grid place-items-center">
+			<div class="relative grid h-6 w-6 place-items-center">
 				<a
 					href="/"
-					class="absolute w-12 h-12 text-2xl font-serif font-extrabold flex gap-[1px] items-center justify-center leading-none dark:text-white"
+					class="absolute flex h-12 w-12 items-center justify-center gap-[1px] font-serif text-2xl font-extrabold leading-none dark:text-white"
 				>
-					R<span class="w-[6px] h-[6px] bg-primary rounded-full translate-y-[7px]"></span>
+					R<span class="h-[6px] w-[6px] translate-y-[7px] rounded-full bg-primary"></span>
 				</a>
 			</div>
 
-			<div class="flex items-center ml-auto">
+			<div class="ml-auto flex items-center">
 				<ButtonSearch />
 				<ButtonTheme />
 			</div>

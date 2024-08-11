@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+// Libs
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+	entry: CollectionEntry<'planifications'>;
+}
+
+const { entry } = Astro.props;
+---
+
+<div class="flex h-full flex-1 flex-col rounded-md border-t-2 border-primary bg-white p-4 shadow-md dark:bg-slate">
+	<h5 class="text-lg font-medium capitalize text-primary dark:text-white">{entry.data.title}</h5>
+	<!-- Resumen -->
+	<p class="mb-4 mt-1 text-sm">
+		{entry.data.resumen}
+	</p>
+	<!-- Ver planificación CTA -->
+	<a
+		href={`/planification/${entry.slug}`}
+		class="group relative order-4 mt-auto box-border flex justify-between rounded-md border border-light-gray p-2 font-medium shadow-md"
+	>
+		<span> Ver planificación</span>
+		<div>
+			<Icon name="ion:ios-arrow-right" width={20} height={20} />
+		</div>
+	</a>
+</div>

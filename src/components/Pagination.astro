@@ -1,0 +1,30 @@
+---
+//components
+import { Icon } from 'astro-icon/components';
+
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+<nav class="mx-auto flex w-full items-center justify-center gap-4 p-6" aria-label="blog pages">
+	{
+		prevUrl && (
+			<a
+				href={prevUrl}
+				class="flex min-w-28 items-center justify-center gap-1 rounded-md border-2 px-3 py-2 text-sm font-medium dark:text-white"
+			>
+				<Icon name={'ion:arrow-left-c'} />
+				Previous
+			</a>
+		)
+	}
+	{
+		nextUrl && (
+			<a
+				href={nextUrl}
+				class="flex min-w-28 items-center justify-center gap-1 rounded-md border-2 px-3 py-2 text-sm font-medium dark:text-white"
+			>
+				Next <Icon name={'ion:arrow-right-c'} />
+			</a>
+		)
+	}
+</nav>

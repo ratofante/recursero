@@ -1,0 +1,113 @@
+---
+// components
+import Accordion from '@components/Accordion.astro';
+
+//libs
+import { Icon } from 'astro-icon/components';
+
+// utils
+import { capitalizeEachWord } from '@utils/stringsMethods';
+
+//types
+import type { AsideNavigationEntry } from '@types';
+
+interface Props {
+	title: string;
+	entries: AsideNavigationEntry[];
+}
+
+const { title, entries } = Astro.props;
+---
+
+<aside class="w-full">
+	<div class="w-full lg:hidden">
+		<Accordion>
+			<div slot="trigger" class="accordion__trigger mb-2 flex justify-between font-medium text-pink-300">
+				{title}
+				<div class="trailing__icon transition-transform duration-100">
+					<Icon name="ion:chevron-down" width={20} height={20} />
+				</div>
+			</div>
+			<ul slot="content">
+				{
+					entries.map((entry) => (
+						<li class="mb-2">
+							<button
+								data-target={`${entry.slug}`}
+								class="aside__link text-sm text-white opacity-80 hover:text-pink-300"
+							>
+								{capitalizeEachWord(entry.name)}
+							</button>
+							{entry.submenu && (
+								<ul>
+									{entry.submenu.map((sub) => (
+										<li>
+											<button
+												data-target={`${sub.slug}`}
+												class="aside__link text-xs text-white opacity-80 hover:text-pink-300"
+											>
+												- {capitalizeEachWord(sub.name)}
+											</button>
+										</li>
+									))}
+								</ul>
+							)}
+						</li>
+					))
+				}
+			</ul>
+		</Accordion>
+	</div>
+	<div class="hidden lg:block">
+		<div class="mb-2 font-medium text-pink-300">
+			{title}
+		</div>
+		<ul>
+			{
+				entries.map((entry) => (
+					<li class="mb-2">
+						<button
+							data-target={`${entry.slug}`}
+							class="aside__link text-sm text-white opacity-80 hover:text-pink-300"
+						>
+							{capitalizeEachWord(entry.name)}
+						</button>
+						{entry.submenu && (
+							<ul>
+								{entry.submenu.map((sub) => (
+									<li>
+										<button
+											data-target={`${sub.slug}`}
+											class="aside__link text-xs text-white opacity-80 hover:text-pink-300"
+										>
+											- {capitalizeEachWord(sub.name)}
+										</button>
+									</li>
+								))}
+							</ul>
+						)}
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</aside>
+
+<script>
+	const asideLinks = document.querySelectorAll('.aside__link') as NodeListOf<HTMLButtonElement>;
+	asideLinks.forEach((link) => {
+		link.addEventListener('click', () => {
+			const target = document.querySelector(`#${link.dataset.target}`) as HTMLElement | null;
+			console.log(link.dataset.target, target);
+			target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		});
+	});
+
+	const asideAccordionTrigger = document.querySelector('.accordion__trigger') as HTMLDListElement | null;
+
+	function onClick(e: MouseEvent) {
+		const el = e.target as HTMLElement;
+		el.querySelector('.trailing__icon')?.classList.toggle('rotate-180');
+	}
+	asideAccordionTrigger?.addEventListener('click', onClick);
+</script>

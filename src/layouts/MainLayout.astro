@@ -6,9 +6,10 @@ import Navigation from '@components/Navigation/Navigation.astro';
 interface Props {
 	title: string;
 	description: string;
+	aside?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, aside = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,19 +22,40 @@ const { title, description } = Astro.props;
 		<!-- <Navigation /> -->
 		<main
 			id="page-content"
-			class="relative flex flex-col lg:grid grid-cols-10 gap-2 xl:gap-8 max-w-7xl mx-auto px-2 sm:px-4 md:px-8 lg:px-0"
+			class="relative mx-auto flex min-h-screen max-w-2xl grid-cols-10 flex-col gap-2 lg:grid lg:max-w-7xl xl:gap-8"
 		>
 			<!-- Aside Desktop Menu -->
 			<div class="lg:col-span-2">
-				<aside class="hidden lg:block lg:sticky top-[--header-height] pt-8">
+				<aside class="sticky top-[--header-height] hidden pt-8 lg:block">
 					<Navigation />
 				</aside>
 			</div>
+
 			<!-- Page Content -->
-			<div class="lg:col-span-8 pt-8 mt-[--header-height]">
-				<slot />
+			<div class="mt-[--header-height] flex flex-col gap-2 pt-8 lg:col-span-8">
+				<!-- Content -->
+				<div class="relative flex flex-col-reverse gap-2 lg:flex-row">
+					<!-- Body -->
+					<div>
+						<slot name="title" />
+						<slot />
+					</div>
+					<!-- Content Navigation -->
+					<div
+						class="content__side__navigation h-fit w-full shrink-0 px-4 lg:sticky lg:w-64 lg:px-2 xl:px-8"
+						class:list={[{ hidden: !aside }]}
+					>
+						<slot name="aside" />
+					</div>
+				</div>
 			</div>
 		</main>
 		<NavigationMobile />
 	</body>
 </html>
+
+<style>
+	.content__side__navigation {
+		top: calc(var(--header-height) + 2rem);
+	}
+</style>

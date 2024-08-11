@@ -1,6 +1,76 @@
 ---
+// consts
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import MainLayout from '../../layouts/MainLayout.astro';
+
+//components
+import MainLayout from '@layouts/MainLayout.astro';
+import AsideNavigation from '@components/AsideNavigation.astro';
+import AsideNavigationAnchor from '@components/AsideNavigationAnchor.astro';
+import SectionPlanificationsGroup from '@components/Sections/SectionPlanificationsGroup.astro';
+import TitleSimple from '@components/TitleSimple.astro';
+
+//libs
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+//types
+import type { Eje, AsideNavigationEntry } from '@types';
+
+const planifications: CollectionEntry<'planifications'>[] = await getCollection('planifications');
+const ejesTematicos: CollectionEntry<'ejes-tematicos'>[] = await getCollection('ejes-tematicos');
+
+const ejes: Eje[] = [];
+const asideNavigation: AsideNavigationEntry[] = [
+	{
+		name: 'Planificaciones ESI',
+		slug: 'planificaciones-esi',
+		submenu: [],
+	},
+];
+
+ejesTematicos.forEach((eje) => {
+	let posts: CollectionEntry<'planifications'>[] = [];
+	planifications.forEach((plani) => {
+		plani.data.ejes.forEach((name) => {
+			if (eje.id === name.id) {
+				posts.push(plani);
+			}
+		});
+	});
+	ejes.push({
+		title: eje.data.title,
+		resumen: eje.data.resumen,
+		posts: posts,
+		slug: eje.data.slug,
+	});
+	asideNavigation[0].submenu?.push({
+		name: eje.data.title,
+		slug: eje.data.slug,
+	});
+});
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION} />
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<TitleSimple title="Blog" />
+	<div class="relative px-4">
+		<AsideNavigationAnchor target="planificaciones-esi" />
+		<h4 class="mb-4 text-pretty text-3xl font-medium text-opacity-80 lg:mb-8 lg:text-4xl">
+			Planificaciones para la ESI
+		</h4>
+		<p class="text-body mb-8">
+			En esta sección encontrarás una recopilación de recursos educativos enfocados en la Educación Sexual
+			Integral (ESI). Esta sección está diseñada para abordar temáticas fundamentales que promueven el respeto, la
+			igualdad, y la convivencia en una sociedad diversa. Cada eje temático es una herramienta educativa que
+			permite explorar desde los derechos de las infancias hasta la promoción de hábitos saludables y la
+			valoración de la diversidad en todas sus formas.<br /><br />
+
+			Los tres ejes que articulan estos contenidos son: "Convivencia y derechos", que busca fomentar el respeto y
+			la empatía en una sociedad plural; "Cuerpos, salud y cuidados", centrado en la valoración del cuerpo y la
+			promoción de hábitos saludables; y "Género y diversidad", enfocado en problematizar estereotipos de género y
+			promover la igualdad y el respeto por la diversidad. Estos ejes son esenciales para formar ciudadanos
+			conscientes y comprometidos con la realidad social.
+		</p>
+	</div>
+	<SectionPlanificationsGroup ejes={ejes} />
+	<AsideNavigation slot="aside" title="En esta página" entries={asideNavigation} />
+</MainLayout>

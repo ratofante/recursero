@@ -1,0 +1,28 @@
+---
+//components
+import PostLayout from '../../layouts/PostLayout.astro';
+
+// libs
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const planifications = await getCollection('planifications');
+	return planifications.map((planification) => ({
+		params: { slug: planification.slug },
+		props: { planification },
+	}));
+}
+
+interface Props {
+	planification: CollectionEntry<'planifications'>;
+}
+const { planification } = Astro.props;
+const { Content } = await planification.render();
+---
+
+<PostLayout frontmatter={planification}>
+	<div class="mb-16 px-4">
+		<Content />
+	</div>
+</PostLayout>

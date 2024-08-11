@@ -1,0 +1,89 @@
+---
+import CardPlanification from '@components/card/CardPlanification.astro';
+import CardPlanificationFull from '@components/card/CardPlanificationFull.astro';
+import AsideNavigationAnchor from '@components/AsideNavigationAnchor.astro';
+
+//utils
+import { capitalizeEachWord } from '@utils/stringsMethods';
+
+// Types
+import type { CollectionEntry } from 'astro:content';
+import type { Eje } from '@types';
+
+interface Props {
+	ejes: Eje[];
+}
+
+const { ejes } = Astro.props;
+---
+
+<div>
+	{
+		ejes.map((eje) => (
+			<article  class="relative my-8 lg:my-16">
+
+				<AsideNavigationAnchor target={eje.slug} />
+
+				<header class="px-4">
+					<h3 class="mb-4 text-2xl lg:text-3xl font-medium opacity-80">{capitalizeEachWord(eje.title)}</h3>
+					<p class="text-body">{eje.resumen}</p>
+				</header>
+
+				<div class="my-4 flex flex-col gap-2 rounded-md bg-light-gray py-4 shadow-md  dark:bg-secondary">
+					<h6 class="mb-2 flex justify-between px-4 font-medium text-slate dark:text-primary">
+						Últimas planificaciones
+						<a href={`/${eje.slug}/1`} class="font-light text-sm text-pink-600 dark:text-pink-300 opacity-80">
+							ver todas
+						</a>
+					</h6>
+					<!-- Swiper -->
+					<div id="newest-planifications" class="overflow-hidden  px-4 relative sm:hidden">
+						<div class="swiper-wrapper">
+							{eje.posts.slice(0, 2).map((plani: CollectionEntry<'planifications'>) => (
+								<div class="swiper-slide">
+									<CardPlanification entry={plani} />
+								</div>
+							))}
+						</div>
+						<div class="swiper-scrollbar"></div>
+					</div>
+					<!-- SM and above -->
+					<div class="px-4 hidden sm:flex gap-4">
+						{eje.posts.slice(0, 2).map((plani: CollectionEntry<'planifications'>) => (
+									<CardPlanificationFull entry={plani} />
+							))}
+					</div>
+				</div>
+
+			</article>
+		))
+	}
+</div>
+<style>
+	.swiper-slide {
+		height: auto;
+		align-self: stretch;
+	}
+</style>
+<script>
+	import Swiper from 'swiper';
+	import { Scrollbar } from 'swiper/modules';
+	import 'swiper/css';
+	import 'swiper/css/scrollbar';
+
+	new Swiper('#newest-planifications', {
+		modules: [Scrollbar],
+		scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+		slidesPerView: 1.1,
+		spaceBetween: 10,
+		breakpoints: {
+			480: {
+				slidesPerView: 1.6,
+				spaceBetween: 20,
+			},
+		},
+	});
+</script>
