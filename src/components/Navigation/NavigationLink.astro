@@ -14,10 +14,10 @@ const { to, name, leadingIcon, trailingIcon, size } = Astro.props;
 
 <a
 	href={to}
-	class="cursor-pointer relative after:content-[''] after:absolute after:top-0 after:-left-0 after:w-full after:h-full after:bg-primary after:bg-opacity-0 after:z-0 hover:after:bg-opacity-35 after:transition-colors after:duration-100"
+	class="relative cursor-pointer after:absolute after:-left-0 after:top-0 after:z-0 after:h-full after:w-full after:bg-violet-400 after:bg-opacity-0 after:transition-colors after:duration-100 after:content-[''] hover:after:bg-opacity-35"
 >
 	<div
-		class="flex gap-4 justify-between px-2 py-2 items-center relative z-10"
+		class="relative z-10 flex items-center justify-between gap-4 px-4 py-2"
 		class:list={[{ 'gap-4': size === 'normal' }, { 'gap-2 text-sm': size === 'small' }]}
 	>
 		{
@@ -27,7 +27,7 @@ const { to, name, leadingIcon, trailingIcon, size } = Astro.props;
 				</div>
 			)
 		}
-		<div class="mr-auto">
+		<div class="mr-auto lg:text-sm xl:text-base">
 			{name}
 		</div>
 		{

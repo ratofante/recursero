@@ -4,6 +4,8 @@ ejes: ['genero-diversidad']
 authors: ['Constanza Wilde', 'Yesica Calvamater', 'Agustina Wilde']
 target: 'primer ciclo'
 resumen: 'Nos ponemos en conocimiento acerca de la diversidad de configuraciones familiares que existen, a través de imágenes, un cuento y actividades creativas, fomentando la inclusión y el respeto.'
+cover: '/src/assets/images/blog__05.jpg'
+coverAlt: 'familias diverdas'
 ---
 
 ## Lineamiento/s de ESI

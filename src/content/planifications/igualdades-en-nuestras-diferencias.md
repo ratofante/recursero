@@ -4,6 +4,8 @@ ejes: ['convivencia-derechos']
 authors: ['Juliana Alcaraz', 'Evelin Sepulveda', 'Rocío Ruiz']
 target: 'primer ciclo'
 resumen: 'Utilizamos el audiocuento "Orejas de mariposa" para identificar y reflexionar sobre comportamientos discriminatorios, fomentar el respeto por la diversidad y enseñar sobre los Derechos del Niño a través de situaciones cotidianas. '
+cover: '/src/assets/images/blog__01.jpg'
+coverAlt: 'Igualdades en nuestras diferencias'
 ---
 
 ## Lineamiento/s de ESI

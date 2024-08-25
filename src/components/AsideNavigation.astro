@@ -22,7 +22,10 @@ const { title, entries } = Astro.props;
 <aside class="w-full">
 	<div class="w-full lg:hidden">
 		<Accordion>
-			<div slot="trigger" class="accordion__trigger mb-2 flex justify-between font-medium text-pink-300">
+			<div
+				slot="trigger"
+				class="accordion__trigger mb-2 flex justify-between font-medium text-secondary dark:text-pink-300"
+			>
 				{title}
 				<div class="trailing__icon transition-transform duration-100">
 					<Icon name="ion:chevron-down" width={20} height={20} />
@@ -34,7 +37,7 @@ const { title, entries } = Astro.props;
 						<li class="mb-2">
 							<button
 								data-target={`${entry.slug}`}
-								class="aside__link text-sm text-white opacity-80 hover:text-pink-300"
+								class="aside__link text-sm text-black hover:text-violet-600 dark:text-white dark:hover:text-pink-300"
 							>
 								{capitalizeEachWord(entry.name)}
 							</button>
@@ -44,7 +47,7 @@ const { title, entries } = Astro.props;
 										<li>
 											<button
 												data-target={`${sub.slug}`}
-												class="aside__link text-xs text-white opacity-80 hover:text-pink-300"
+												class="aside__link text-xs text-black hover:text-violet-600 dark:text-white dark:hover:text-pink-300"
 											>
 												- {capitalizeEachWord(sub.name)}
 											</button>
@@ -58,8 +61,9 @@ const { title, entries } = Astro.props;
 			</ul>
 		</Accordion>
 	</div>
+
 	<div class="hidden lg:block">
-		<div class="mb-2 font-medium text-pink-300">
+		<div class="mb-2 font-medium text-secondary dark:text-pink-300">
 			{title}
 		</div>
 		<ul>
@@ -68,7 +72,7 @@ const { title, entries } = Astro.props;
 					<li class="mb-2">
 						<button
 							data-target={`${entry.slug}`}
-							class="aside__link text-sm text-white opacity-80 hover:text-pink-300"
+							class="aside__link text-sm text-secondary opacity-80 hover:text-violet-400 dark:text-white dark:hover:text-pink-300"
 						>
 							{capitalizeEachWord(entry.name)}
 						</button>
@@ -78,7 +82,7 @@ const { title, entries } = Astro.props;
 									<li>
 										<button
 											data-target={`${sub.slug}`}
-											class="aside__link text-xs text-white opacity-80 hover:text-pink-300"
+											class="aside__link text-xs text-secondary opacity-80 hover:text-violet-400 dark:text-white dark:hover:text-pink-300"
 										>
 											- {capitalizeEachWord(sub.name)}
 										</button>

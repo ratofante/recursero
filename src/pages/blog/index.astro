@@ -50,14 +50,12 @@ ejesTematicos.forEach((eje) => {
 });
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<TitleSimple title="Blog" />
+<MainLayout title={`${SITE_TITLE} | Blog`} description={SITE_DESCRIPTION}>
+	<TitleSimple title="Blog" classes="lg:mb-16" />
 	<div class="relative px-4">
 		<AsideNavigationAnchor target="planificaciones-esi" />
-		<h4 class="mb-4 text-pretty text-3xl font-medium text-opacity-80 lg:mb-8 lg:text-4xl">
-			Planificaciones para la ESI
-		</h4>
-		<p class="text-body mb-8">
+		<h4 class="mb-4 text-pretty text-3xl font-medium lg:mb-8 lg:text-4xl">Planificaciones para la ESI</h4>
+		<p class="text-body mb-16">
 			En esta sección encontrarás una recopilación de recursos educativos enfocados en la Educación Sexual
 			Integral (ESI). Esta sección está diseñada para abordar temáticas fundamentales que promueven el respeto, la
 			igualdad, y la convivencia en una sociedad diversa. Cada eje temático es una herramienta educativa que

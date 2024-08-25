@@ -1,7 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import ButtonMenu from './ButtonMenu.astro';
 import ButtonSearch from './ButtonSearch.astro';
 import ButtonTheme from './ButtonTheme.astro';
+
+import Logo from '/src/assets/images/logo.png';
 
 interface Props {
 	classes?: string;
@@ -11,19 +14,16 @@ const { classes }: Props = Astro.props;
 
 <header class="fixed left-0 right-0 top-0 z-40 h-[--header-height]" class:list={[classes]}>
 	<div
-		class="relative z-50 mx-auto h-full max-w-2xl rounded-b-md border-b-4 border-secondary bg-white px-2 shadow-sm shadow-gray sm:px-4 md:px-8 lg:max-w-7xl lg:px-2 dark:border-primary dark:bg-black dark:shadow-none"
+		class="relative z-50 mx-auto h-full max-w-2xl rounded-b-md bg-white px-2 shadow-sm shadow-violet-200 sm:px-4 md:px-4 lg:max-w-7xl dark:border-primary dark:bg-black dark:shadow-zinc-600"
 	>
 		<div class="flex h-full items-center justify-between">
 			<!-- Logo -->
-			<div class="relative grid h-6 w-6 place-items-center">
-				<a
-					href="/"
-					class="absolute flex h-12 w-12 items-center justify-center gap-[1px] font-serif text-2xl font-extrabold leading-none dark:text-white"
-				>
-					R<span class="h-[6px] w-[6px] translate-y-[7px] rounded-full bg-primary"></span>
+			<div class="relative grid h-8 place-items-center">
+				<a href="/" class="flex items-center gap-2 font-serif capitalize">
+					<Image src={Logo} alt="ESI se planifica" width={36} height={36} />
+					<span class="hidden md:inline">se planifica</span>
 				</a>
 			</div>
-
 			<div class="ml-auto flex items-center">
 				<ButtonSearch />
 				<ButtonTheme />

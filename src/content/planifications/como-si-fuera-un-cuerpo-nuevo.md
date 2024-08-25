@@ -4,6 +4,8 @@ ejes: ['cuerpos-salud-cuidados']
 authors: ['Stella Galli', 'Micaela Alanis','Mayra Montes', 'Rocio Gallardo']
 target: 'segundo ciclo'
 resumen: 'Trabajamos los cambios físicos y emocionales de la pubertad, utilizando la revista “Cambios que se ven y se sienten” y actividades reflexivas para promover el reconocimiento y respeto de estos procesos según la vivencia de cada uno/a.'
+cover: '/src/assets/images/blog__01.jpg'
+coverAlt: 'como si fuera un cuerpo nuevo'
 ---
 
 ## Lineamiento/s de ESI

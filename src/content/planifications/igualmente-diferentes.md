@@ -4,6 +4,8 @@ ejes: ['convivencia-derechos']
 authors: ['Nara Acosta', 'Marianela Belo']
 target: 'primer ciclo'
 resumen: 'El cuento “Por cuatro esquinitas de nada” promueve el debate sobre el valor de la diversidad y la prevención de la discriminación, junto con actividades en las que las y los estudiantes crean personajes únicos.'
+cover: '/src/assets/images/blog__02.jpg'
+coverAlt: 'Igualmente diferentes'
 ---
 
 ## Lineamiento/s de ESI

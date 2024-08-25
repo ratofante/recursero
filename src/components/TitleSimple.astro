@@ -1,14 +1,16 @@
 ---
 interface Props {
 	title: string;
+	classes?: string;
 }
 
-const { title } = Astro.props;
+const { title, classes } = Astro.props;
 ---
 
 <h2
 	slot="title"
-	class="mb-8 bg-primary bg-opacity-30 p-4 text-4xl font-semibold text-slate lg:mb-16 lg:text-5xl dark:bg-opacity-50 dark:text-white"
+	class="mb-8 bg-violet-400 p-4 text-4xl font-semibold text-slate sm:rounded-md lg:text-5xl dark:bg-opacity-50 dark:text-white"
+	class:list={classes}
 >
 	{title}
 </h2>

@@ -4,6 +4,8 @@ ejes: ['genero-diversidad']
 authors: ['Lorena Fernández', 'Liz Monserrat', 'Carolina Parente']
 target: 'segundo ciclo'
 resumen: 'Identificamos estereotipos de género en publicidades de diferentes épocas, discutiendo su impacto y evolución. Las y los estudiantes crean nuevas publicidades sin estereotipos, utilizando herramientas digitales.'
+cover: '/src/assets/images/blog__02.jpg'
+coverAlt: 'Rompiendo estereotipos'
 ---
 
 ## Lineamiento/s de ESI

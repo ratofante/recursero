@@ -4,6 +4,8 @@ ejes: ['genero-diversidad']
 authors: ['María Sol Hileni', 'Yanina Kloster', 'Brenda Saldaño']
 target: 'segundo ciclo'
 resumen: 'Tomando fragmentos de películas de Disney, reflexionamos y debatimos sobre estereotipos de género, promoviendo la recreación de escenas desde una mirada igualitaria. '
+cover: '/src/assets/images/blog__01.jpg'
+coverAlt: 'Reiventando historias'
 ---
 
 ## Lineamiento/s de ESI

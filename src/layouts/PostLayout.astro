@@ -1,15 +1,53 @@
 ---
 // constants
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
+import { SITE_TITLE } from '../consts';
 
 // components
 import MainLayout from './MainLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	frontmatter: CollectionEntry<'planifications'>;
+}
 
 const { frontmatter } = Astro.props;
-//console.log(frontmatter);
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<h1>{frontmatter.title}</h1>
-	<slot />
+<MainLayout title={`${SITE_TITLE} | ${frontmatter.data.title}`} description={frontmatter.data.resumen}>
+	<div class="aspect-auto overflow-hidden rounded-md">
+		<Image
+			class="h-full w-full object-cover object-center"
+			src={frontmatter.data.cover}
+			alt={frontmatter.data.coverAlt}
+			quality={80}
+		/>
+	</div>
+	<div class="px-4">
+		<div class="my-8">
+			<div class="mb-4 flex flex-wrap gap-2">
+				{
+					frontmatter.data.ejes.map((eje) => (
+						<a
+							href={`/${eje.id}/1`}
+							class="inline-block rounded-md bg-violet-200 px-2 py-1 text-violet-600"
+						>
+							{eje.id}
+						</a>
+					))
+				}
+			</div>
+			<h1 class="text-3xl capitalize">{frontmatter.data.title}</h1>
+			<p class="my-4">{frontmatter.data.resumen}</p>
+			<div class="text-body mt-2 border-b border-violet-200 pb-8 font-medium">
+				Autoria: {
+					frontmatter.data.authors.map((auth, i) => (
+						<span class="mr-1">{auth + (frontmatter.data.authors.length !== i + 1 ? ', ' : '.')}</span>
+					))
+				}
+			</div>
+		</div>
+
+		<slot />
+	</div>
 </MainLayout>

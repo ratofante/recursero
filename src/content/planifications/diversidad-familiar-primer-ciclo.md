@@ -4,6 +4,8 @@ ejes: ['convivencia-derechos']
 authors: ['Tatiana Cano', 'Sol de la Igleasia','Melina Villaroel']
 target: 'primer ciclo'
 resumen: '¿Cuántos tipos de familia son posibles? mediante el uso de láminas de personas diversas, fomentamos la reflexión sobre las distintas configuraciones familiares en un ambiente inclusivo y respetuoso.'
+cover: '/src/assets/images/blog__03.jpg'
+coverAlt: 'diversidad familiar (primer ciclo)'
 ---
 
 ## Lineamiento/s de ESI

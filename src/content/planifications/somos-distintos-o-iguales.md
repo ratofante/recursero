@@ -4,6 +4,8 @@ ejes: ['convivencia-derechos']
 authors: ['Lorena Fernández', 'Montserrat Liz', 'Carolina Parente']
 target: 'primer ciclo'
 resumen: 'A partir de un cortometraje animado se desarrollan actividades para reflexionar sobre prejuicios y actitudes discriminatorias, promoviendo el diálogo y la valoración de la diversidad a través de debates y creaciones artísticas grupales.'
+cover: '/src/assets/images/blog__03.jpg'
+coverAlt: '¿Somos distintos o iguales?'
 ---
 
 ## Lineamiento/s de ESI

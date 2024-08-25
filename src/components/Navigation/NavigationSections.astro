@@ -13,8 +13,10 @@ const root = new URL(Astro.request.url).origin;
 ---
 
 <!-- Sections -->
-<div class="text-lg flex flex-col">
-	<Accordion>
+<div class="flex flex-col text-lg">
+	<NavigationLink to="/" name="Inicio" leadingIcon="ion:home" />
+	<NavigationLink to="/" name="Historia" leadingIcon="ion:finger-print" />
+	<!-- <Accordion>
 		<NavigationButton slot="trigger" name="Inicio" leadingIcon="ion:home" trailingIcon="ion:chevron-down" />
 		<ul slot="content" class="pl-4">
 			<li>
@@ -40,7 +42,7 @@ const root = new URL(Astro.request.url).origin;
 				<NavigationLink to="/" name="ESI" leadingIcon="ion:accessibility" size="small" />
 			</li>
 		</ul>
-	</Accordion>
+	</Accordion> -->
 	<Accordion>
 		<NavigationButton slot="trigger" name="Blog" leadingIcon="ion:md-bookmarks" trailingIcon="ion:chevron-down" />
 		<ul slot="content" class="pl-4">
@@ -56,7 +58,8 @@ const root = new URL(Astro.request.url).origin;
 			}
 		</ul>
 	</Accordion>
-	<Accordion>
+	<NavigationLink to="/" name="Contacto" leadingIcon="ion:md-contacts" />
+	<!-- <Accordion>
 		<NavigationButton
 			slot="trigger"
 			name="Contacto"
@@ -71,17 +74,17 @@ const root = new URL(Astro.request.url).origin;
 				<NavigationLink to="/" name="nazarenasilvetti@gmail.com" leadingIcon="ion:mail" size="small" />
 			</li>
 		</ul>
-	</Accordion>
+	</Accordion> -->
 	<NavigationLink to="/" name="Información" leadingIcon="ion:information-circle" />
-	<div class="pl-2 border-t border-slate pt-8 mt-6">
-		<div class="flex gap-[2px] items-center mb-6 leading-none font-extrabold font-serif dark:text-white">
-			Recursero <span class="block w-[6px] h-[6px] bg-primary rounded-full translate-y-[4px]"></span>
+	<div class="mt-6 border-t border-slate px-4 pt-8">
+		<div class="mb-6 flex items-center gap-[2px] font-serif font-extrabold leading-none dark:text-white">
+			Recursero <span class="block h-[6px] w-[6px] translate-y-[4px] rounded-full bg-violet-400"></span>
 		</div>
-		<div class="flex gap-2 my-4 items-center text-xs font-normal font-sans">
+		<div class="my-4 flex items-center gap-2 font-sans text-xs font-normal">
 			<Icon name="ion:mail" width={14} height={14} />
 			<span>recursero@gmail.com</span>
 		</div>
-		<div class="flex gap-2 my-4 items-center text-xs font-normal font-sans">
+		<div class="my-4 flex items-center gap-2 font-sans text-xs font-normal">
 			<Icon name="ion:call" width={14} height={14} />
 			<span>+54 9 11 7360-4520</span>
 		</div>

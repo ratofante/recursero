@@ -4,6 +4,8 @@ ejes: ['cuerpos-salud-cuidados']
 authors: ['Camila Encalada', 'Agustina Suarez']
 target: 'segundo ciclo'
 resumen: 'Abordamos el crecimiento en la pubertad y la valoración de los cambios emocionales, utilizando el cuento "El gusano encarcelado" para actividades reflexivas.'
+cover: '/src/assets/images/blog__02.jpg'
+coverAlt: 'diversidad como norma'
 ---
 
 ## Lineamiento/s de ESI
