@@ -18,14 +18,14 @@ const { label, href, icon, type, size, classes, ...rest } = Astro.props as Props
 
 <a
 	href={href}
-	class="flex items-center gap-2 font-semibold w-fit rounded px-4"
+	class="flex w-fit items-center gap-2 rounded px-4 font-semibold"
 	class:list={[
 		classes,
 		{
-			'text-white bg-primary': type === 'primary',
-			'border-2 border-primary text-primary': type === 'secondary',
+			'bg-violet-400 text-white': type === 'primary',
+			'border-2 border-primary text-violet-400': type === 'secondary',
 			'': type === 'tertiary',
-			'py-0 px-0 aspect-square gap-0 justify-center': icon && icon.type === 'icon',
+			'aspect-square justify-center gap-0 px-0 py-0': icon && icon.type === 'icon',
 			'border-2 border-danger text-danger': type === 'destructive',
 			'h-6': size === 'xs',
 			'h-7': size === 'sm',

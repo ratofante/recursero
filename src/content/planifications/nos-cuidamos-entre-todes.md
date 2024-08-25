@@ -4,6 +4,8 @@ ejes: ['cuerpos-salud-cuidados']
 authors: ['Christy Becerra', 'Gisela Batallanes']
 target: 'segundo ciclo'
 resumen: 'La prevención del grooming desde material audiovisual e informativo, instancias de debate y creación de folletos y afiches para concienciar sobre esta problemática y sus medidas preventivas.'
+cover: '/src/assets/images/blog__03.jpg'
+coverAlt: 'Nos cuidamos entre todas/os/es'
 ---
 
 ## Lineamiento/s de ESI

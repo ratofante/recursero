@@ -15,26 +15,28 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-serif font-extrabold tracking-tight text-black dark:text-white;
+		@apply font-serif tracking-tight text-black dark:text-white;
 	}
 	.text-body {
-		@apply text-balance text-base tracking-wide lg:text-lg dark:font-extralight;
+		@apply text-pretty text-lg tracking-wide lg:text-lg dark:font-extralight;
 	}
 	p,
 	li {
 		@apply text-body;
 	}
-	.text-block {
-		@apply max-w-screen-sm 2xl:max-w-screen-md;
+
+	.post__content h2 {
+		@apply my-8 text-2xl font-normal transition-colors;
 	}
-	.text-block .tagname {
-		@apply inline-block pb-2 text-xs font-semibold uppercase tracking-wide text-slate sm:pb-3 sm:text-sm 2xl:pb-4 2xl:text-base dark:text-primary dark:text-opacity-90;
+
+	.post__content p {
+		@apply my-4;
 	}
-	.text-block .title {
-		@apply pb-2 text-3xl capitalize sm:pb-3 sm:text-4xl 2xl:pb-4 2xl:text-6xl;
+	.post__content li {
+		@apply my-2 font-medium;
 	}
-	.text-block .copy {
-		@apply pb-4 text-base leading-6 sm:pb-4 sm:text-lg 2xl:pb-6 2xl:text-[20px] 2xl:leading-8;
+	.post__content img {
+		@apply my-4;
 	}
 }
 

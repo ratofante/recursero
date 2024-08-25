@@ -4,6 +4,8 @@ ejes: ['genero-diversidad']
 authors: ['Gisela Batallanes', 'Christy Becerra Montalván']
 target: 'primer ciclo'
 resumen: '¿Cómo se reparten las tareas en casa? Se analizan roles familiares y la división de tareas del hogar para promover la igualdad de género y el respeto por la diversidad cultural. '
+cover: '/src/assets/images/blog__05.jpg'
+coverAlt: '¿Qué hacemos en casa?'
 ---
 
 ## Lineamiento/s de ESI

@@ -4,6 +4,8 @@ ejes: ['cuerpos-salud-cuidados']
 authors: ['Aylen Labrone', 'Camila Sequeira']
 target: 'segundo ciclo'
 resumen: 'Una serie de actividades para fomentar el consentimiento y respeto del propio cuerpo, la expresión de sentimientos y la resolución de conflictos mediante dinámicas de introspección, interacción en grupos y diálogos. '
+cover: '/src/assets/images/blog__04.jpg'
+coverAlt: 'Nuestro cuerpo en el espacio, reconocernos hoy'
 ---
 
 ## Lineamiento/s de ESI

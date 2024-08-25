@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 
 // Libs
-import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 
 interface Props {
 	entry: CollectionEntry<'planifications'>;
@@ -11,20 +11,20 @@ interface Props {
 const { entry } = Astro.props;
 ---
 
-<div class="flex h-full flex-1 flex-col rounded-md border-t-2 border-primary bg-white p-4 shadow-md dark:bg-slate">
-	<h5 class="text-lg font-medium capitalize text-primary dark:text-white">{entry.data.title}</h5>
+<a href={`/planification/${entry.slug}`} class="group flex h-full flex-1 flex-col">
+	<div class="aspect-video overflow-hidden rounded-md">
+		<Image
+			class="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+			src={entry.data.cover}
+			alt={entry.data.coverAlt}
+			quality={80}
+			loading={'lazy'}
+		/>
+	</div>
+	<h5 class="mb-2 mt-4 text-lg font-medium capitalize text-black dark:text-white">{entry.data.title}</h5>
 	<!-- Resumen -->
-	<p class="mb-4 mt-1 text-sm">
+	<p class="mb-4 line-clamp-3 text-pretty text-sm">
 		{entry.data.resumen}
 	</p>
 	<!-- Ver planificación CTA -->
-	<a
-		href={`/planification/${entry.slug}`}
-		class="group relative order-4 mt-auto box-border flex justify-between rounded-md border border-light-gray p-2 font-medium shadow-md"
-	>
-		<span> Ver planificación</span>
-		<div>
-			<Icon name="ion:ios-arrow-right" width={20} height={20} />
-		</div>
-	</a>
-</div>
+</a>
