@@ -1,0 +1,20 @@
+---
+interface Props {
+	href: string;
+	label: string;
+	classes?: string;
+}
+
+const { href, label, classes } = Astro.props;
+---
+
+<a
+	href={href}
+	class="text-gray border-gray inline-block w-fit min-w-[164px] overflow-hidden rounded-full border-2"
+	class={classes}
+>
+	<div class="relative z-10 px-8 py-3 text-center text-lg font-medium">
+		{label}
+	</div>
+	<div class="absolute left-0 top-0 z-0"></div>
+</a>

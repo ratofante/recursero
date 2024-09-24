@@ -3,7 +3,7 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 
 //components
-import MainLayout from '@layouts/MainLayout.astro';
+import BlogLayout from '@layouts/BlogLayout.astro';
 import AsideNavigation from '@components/AsideNavigation.astro';
 import AsideNavigationAnchor from '@components/AsideNavigationAnchor.astro';
 import SectionPlanificationsGroup from '@components/Sections/SectionPlanificationsGroup.astro';
@@ -50,7 +50,7 @@ ejesTematicos.forEach((eje) => {
 });
 ---
 
-<MainLayout title={`${SITE_TITLE} | Blog`} description={SITE_DESCRIPTION}>
+<BlogLayout title={`${SITE_TITLE} | Blog`} description={SITE_DESCRIPTION}>
 	<TitleSimple title="Blog" classes="lg:mb-16" />
 	<div class="relative px-4">
 		<AsideNavigationAnchor target="planificaciones-esi" />
@@ -71,4 +71,4 @@ ejesTematicos.forEach((eje) => {
 	</div>
 	<SectionPlanificationsGroup ejes={ejes} />
 	<AsideNavigation slot="aside" title="En esta página" entries={asideNavigation} />
-</MainLayout>
+</BlogLayout>

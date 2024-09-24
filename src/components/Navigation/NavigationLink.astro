@@ -22,17 +22,17 @@ const { to, name, leadingIcon, trailingIcon, size } = Astro.props;
 	>
 		{
 			leadingIcon && (
-				<div class="">
+				<div class="dark:text-white dark:opacity-80">
 					<Icon name={leadingIcon} width={size != 'normal' ? 18 : 24} height={size != 'normal' ? 18 : 24} />
 				</div>
 			)
 		}
-		<div class="mr-auto lg:text-sm xl:text-base">
+		<div class="mr-auto lg:text-sm xl:text-base dark:text-white dark:opacity-80">
 			{name}
 		</div>
 		{
 			trailingIcon && (
-				<div class="">
+				<div class="dark:text-white dark:opacity-80">
 					<Icon name={trailingIcon} width={12} height={12} />
 				</div>
 			)

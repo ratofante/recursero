@@ -1,11 +1,11 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-import MainLayout from '@layouts/MainLayout.astro';
+import BlogLayout from '@layouts/BlogLayout.astro';
 import Link from '@components/Link/Link.astro';
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<BlogLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<div class="container">
 		<div class="text-block my-8 lg:my-16 2xl:my-24">
 			<span class="tagname"> this is a tagname </span>
@@ -68,4 +68,4 @@ import Link from '@components/Link/Link.astro';
 			</p>
 		</div>
 	</div>
-</MainLayout>
+</BlogLayout>

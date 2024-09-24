@@ -2,12 +2,13 @@
 @tailwind utilities;
 
 :root {
-	--header-height: 4rem;
+	--header-height-sm: 2.8rem;
+	--header-height-lg: 4rem;
 }
 
 @layer base {
-	body {
-		@apply bg-white text-slate transition-colors dark:bg-black dark:text-white dark:text-opacity-85;
+	section {
+		@apply py-16 lg:py-32;
 	}
 	h1,
 	h2,
@@ -18,7 +19,7 @@
 		@apply font-serif tracking-tight text-black dark:text-white;
 	}
 	.text-body {
-		@apply text-pretty text-lg tracking-wide lg:text-lg dark:font-extralight;
+		@apply text-pretty text-lg tracking-wide lg:text-lg dark:font-extralight dark:text-white dark:opacity-80;
 	}
 	p,
 	li {
@@ -56,4 +57,22 @@
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+.pin-spacer {
+	pointer-events: none;
+}
+
+.section__title {
+	@apply my-2 text-[36px] leading-[1] lg:text-[52px];
+}
+.section__subtitle {
+	@apply my-2 text-[22px] font-light italic lg:text-4xl;
+}
+.section__tagname {
+	@apply text-sm font-medium uppercase tracking-wider text-gray;
+}
+
+.section__body {
+	@apply my-4 text-base font-light leading-[1.5] md:text-lg md:leading-[1.5] xl:text-[22px] xl:leading-[1.7];
 }

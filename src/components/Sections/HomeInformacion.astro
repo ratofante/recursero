@@ -1,0 +1,103 @@
+---
+import Accordion from '@components/Accordion.astro';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+
+// assets
+import BG from '@assets/images/tools__background.jpg';
+---
+
+<section>
+	<h3 class="relative z-10 mb-8 text-center text-3xl sm:mb-16 sm:text-4xl dark:text-white">Información</h3>
+	<div class="relative overflow-hidden rounded-lg px-4 py-16 sm:rounded-lg sm:px-16">
+		<div class="absolute left-0 top-0 z-0 h-full w-full dark:opacity-50">
+			<Image
+				src={BG}
+				alt="tools__background"
+				quality={80}
+				loading={'lazy'}
+				class="h-full w-full object-cover object-center"
+			/>
+		</div>
+
+		<div class="relative z-10 flex flex-col gap-4 sm:gap-6">
+			<div class="dark:bg-slate-800 rounded-xl bg-white p-4 sm:p-6">
+				<Accordion>
+					<div slot="trigger" class="flex items-center justify-between gap-4">
+						<h5 class="sm:font-base text-lg">¿Qué encuentro en este Blog?</h5>
+						<Icon name="ion:chevron-down" width={16} height={16} class="shrink-0" />
+					</div>
+					<div slot="content">
+						<p class="pt-4 text-base">
+							En este sitio podrán acceder a planificaciones didácticas de ESI elaboradas por docentes en
+							formación de educación primaria.
+						</p>
+					</div>
+				</Accordion>
+			</div>
+			<div class="dark:bg-slate-800 rounded-xl bg-white p-4 sm:p-6">
+				<Accordion>
+					<div slot="trigger" class="flex items-center justify-between gap-4">
+						<h5 class="sm:font-base text-lg">¿Cómo realizo la búsqueda de una planificación?</h5>
+						<Icon name="ion:chevron-down" width={16} height={16} class="shrink-0" />
+					</div>
+					<div slot="content">
+						<p class="pt-4 text-base">
+							El sitio permite varios recorridos para la búsqueda de planificaciones. Un recorrido posible
+							es la búsqueda por Ejes Temáticos <a
+								href="/blog"
+								class="inline-flex items-center gap-2 text-violet-500 underline dark:font-semibold dark:text-violet-950"
+							>
+								Ver ejes <Icon name="ion:log-in" width={16} height={16} /></a
+							>.<br /><br />
+							Otra opción <span class="text-violet-500 dark:font-semibold dark:text-violet-950"
+								>(actualmente en desarrollo)</span
+							> es a través de un motor de búsqueda de Palabras clave. Podrás buscar por contenido (por ej.
+							“emociones”, “derechos”, “desarrollo”), por ciclo (“primer ciclo” o “segundo ciclo”) o por áreas
+							curriculares (“prácticas del lenguaje”, “artística”).
+						</p>
+					</div>
+				</Accordion>
+			</div>
+			<div class="dark:bg-slate-800 rounded-xl bg-white p-4 sm:p-6">
+				<Accordion>
+					<div slot="trigger" class="flex items-center justify-between gap-4">
+						<h5 class="sm:font-base text-lg">
+							¿Qué garantía tengo de que estas planificaciones son apropiadas para llevarlas a las aulas?
+						</h5>
+						<Icon name="ion:chevron-down" width={16} height={16} class="shrink-0" />
+					</div>
+					<div slot="content">
+						<p class="pt-4 text-base">
+							Las planificaciones que compartimos formaron parte de las instancias de evaluación del EDI
+							“ESI para la Educación Primaria” del ISFDyT N° 52. Fueron seleccionadas para este sitio sólo
+							aquellas que se sostienen en la perspectiva de derechos, diversidad y cuidados. Las/los
+							invitamos a la <a
+								href="/historia"
+								class="inline-flex items-center gap-0 text-violet-500 underline dark:font-semibold dark:text-violet-950"
+							>
+								sección Historia <Icon name="ion:log-in" width={16} height={16} /></a
+							> para conocer un poco más.
+						</p>
+					</div>
+				</Accordion>
+			</div>
+			<div class="dark:bg-slate-800 rounded-xl bg-white p-4 sm:p-6">
+				<Accordion>
+					<div slot="trigger" class="flex items-center justify-between gap-4">
+						<h5 class="sm:font-base text-lg">
+							¿Qué normativas respaldan los contenidos de estas planificaciones?
+						</h5>
+						<Icon name="ion:chevron-down" width={16} height={16} class="shrink-0" />
+					</div>
+					<div slot="content">
+						<p class="pt-4 text-base">
+							En este sitio podrán acceder a planificaciones didácticas de ESI elaboradas por docentes en
+							formación de educación primaria.
+						</p>
+					</div>
+				</Accordion>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,119 @@
+---
+//components
+import ContainerDefault from '@components/ContainerDefault.astro';
+import Link from '@components/Link/Link.astro';
+
+// libs
+import { Icon } from 'astro-icon/components';
+
+// assets
+---
+
+<section>
+	<ContainerDefault classes="relative overflow-hidden sm:rounded-lg md:rounded-xl bg-violet-800 max-w-screen-md">
+		<div class="absolute left-0 top-0 h-full w-full"></div>
+		<div class="relative z-10 flex flex-col items-center gap-16 overflow-hidden py-16">
+			<!-- Section One -->
+
+			<div class="relative w-full border-2 border-fuchsia-500">
+				<div
+					class="relative z-10 ml-auto w-full max-w-md rounded-xl rounded-tl-none bg-violet-100 p-8 sm:px-10 sm:py-14 dark:border-2 dark:bg-slate-800"
+				>
+					<h2 class="pl-8 text-3xl text-violet-950 dark:text-violet-100">Historia</h2>
+					<div class="my-8 flex flex-col gap-4 sm:my-10 sm:gap-8">
+						<div class="flex gap-4 sm:gap-6">
+							<Icon
+								name={'ion:android-bulb'}
+								width={18}
+								height={18}
+								class="relative top-1 shrink-0 text-violet-700 dark:text-violet-300"
+							/>
+							<p class="text-pretty pr-4 text-base sm:text-lg sm:leading-7">
+								Iniciado en 2019, el proyecto de ESI se adaptó al entorno virtual durante la pandemia,
+								integrando herramientas digitales en la educación.
+							</p>
+						</div>
+						<div class="flex gap-4 sm:gap-6">
+							<Icon
+								name={'ion:sparkles-outline'}
+								width={18}
+								height={18}
+								class="relative top-1 shrink-0 text-violet-700 dark:text-violet-300"
+							/>
+							<p class="text-pretty pr-4 text-base sm:text-lg sm:leading-7">
+								En 2024, se lanzó el blog “E-SÍ se planifica” para destacar las producciones
+								estudiantiles.
+							</p>
+						</div>
+					</div>
+					<Link
+						href="/historia"
+						label="Conocer"
+						type="secondary"
+						size="lg"
+						classes="ml-8 min-w-36 justify-center sm:ml-10"
+						icon={{ name: 'ion:finger-print', type: 'leading' }}
+					/>
+				</div>
+			</div>
+
+			<!-- Section Two -->
+			<div
+				class="mr-auto w-full max-w-md rounded-xl bg-violet-100 p-8 sm:px-10 sm:py-14 dark:border-2 dark:bg-slate-800"
+			>
+				<h2 class="pl-8 text-3xl text-violet-950 dark:text-violet-100">Planificaciones</h2>
+				<div class="my-8 flex flex-col gap-4 sm:my-10 sm:gap-8">
+					<div class="flex gap-4 sm:gap-6">
+						<Icon
+							name={'ion:hand-left-outline'}
+							width={18}
+							height={18}
+							class="relative top-1 shrink-0 text-violet-700 dark:text-violet-300"
+						/>
+						<p class="text-pretty pr-8 text-base">
+							<span class="font-medium text-violet-950 dark:text-violet-100">Convivencia y Derechos</span
+							><br />Promovemos el respeto y la empatía en las infancias, fomentando la expresión de
+							opiniones, valorando las diferencias y superando actitudes discriminatorias en una sociedad
+							plural.
+						</p>
+					</div>
+					<div class="flex gap-4 sm:gap-6">
+						<Icon
+							name={'ion:body-outline'}
+							width={18}
+							height={18}
+							class="relative top-1 shrink-0 text-violet-700 dark:text-violet-300"
+						/>
+						<p class="text-pretty pr-8 text-base">
+							<span class="font-medium text-violet-950 dark:text-violet-100"
+								>Cuerpos, Salud y Cuidados</span
+							><br />Fomentamos el cuidado del cuerpo, respeto por la intimidad, y hábitos saludables,
+							abordando los cambios en la pubertad y brindando herramientas contra el abuso y grooming.
+						</p>
+					</div>
+					<div class="flex gap-4 sm:gap-6">
+						<Icon
+							name={'ion:ios-color-filter'}
+							width={18}
+							height={18}
+							class="relative top-1 shrink-0 text-violet-700 dark:text-violet-300"
+						/>
+						<p class="text-pretty pr-8 text-base">
+							<span class="font-medium text-violet-950 dark:text-violet-100">Género y Diversidad</span><br
+							/>Buscamos cuestionar estereotipos de género, visibilizar la violencia de género y valorar
+							la diversidad para promover la igualdad.
+						</p>
+					</div>
+				</div>
+				<Link
+					href="/blog"
+					label="Ver Blog"
+					type="secondary"
+					size="lg"
+					classes="ml-8 min-w-36 justify-center sm:ml-10"
+					icon={{ name: 'ion:md-bookmarks', type: 'leading' }}
+				/>
+			</div>
+		</div>
+	</ContainerDefault>
+</section>

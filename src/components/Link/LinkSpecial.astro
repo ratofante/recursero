@@ -1,0 +1,18 @@
+---
+interface Props {
+	href: string;
+	label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<a href={href} class="group relative mx-auto block h-12 w-fit min-w-36 rounded-full">
+	<div
+		class="relative z-10 grid h-full place-items-center rounded-full bg-violet-50 transition-transform duration-100 group-hover:-translate-y-1 group-hover:translate-x-1"
+	>
+		<span class="text-lg font-semibold text-violet-400">{label}</span>
+	</div>
+	<div class="absolute left-0 top-0 z-0 h-full w-full rounded-full bg-gradient-to-r from-fuchsia-400 to-indigo-600">
+	</div>
+</a>

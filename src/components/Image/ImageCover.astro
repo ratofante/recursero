@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	src: ImageMetadata;
+	alt: string;
+	lazy?: boolean;
+	classes?: string;
+}
+
+const { src, alt, lazy, classes } = Astro.props;
+---
+
+<div class="h-full w-full" class:list={[classes]}>
+	<Image src={src} alt={alt} loading={lazy ? 'lazy' : 'eager'} class="h-full w-full object-cover" />
+</div>

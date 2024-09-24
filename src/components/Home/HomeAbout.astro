@@ -1,0 +1,59 @@
+---
+// components
+import ContainerDefault from '@components/ContainerDefault.astro';
+
+//libs
+import { Image } from 'astro:assets';
+
+// assets
+import mainPortrait from '@assets/images/home__about/main.jpg';
+import secondaryPortrait from '@assets/images/home__about/secondary.jpg';
+---
+
+<section>
+	<ContainerDefault>
+		<div class="flex flex-col gap-4 md:gap-8 lg:flex-row">
+			<article>
+				<header>
+					<div class="section__tagname">coordinadora</div>
+					<h2 class="section__title">Acerca de <span class="text-green">Mi</span></h2>
+					<h4 class="section__subtitle">Nazarena Silvetti</h4>
+				</header>
+				<p class="section__body">
+					Soy Licenciada en Psicología y especialista en Educación Sexual Integral (ESI). Desde 2015 he
+					trabajado en Equipos de Orientación Escolar, aplicando la ESI en diversos contextos educativos.
+					También soy profesora en institutos de formación docente, abordando la ESI de manera específica y
+					transver sal.<br /><br />
+
+					Desde 2022, formo a docentes en ejercicio en la Diplomatura Superior en ESI de la Provincia de
+					Buenos Aires. Para mí, la ESI es fundamental en mi práctica profesional, y resumo mi filosofía en
+					"lo docente es ESI".
+				</p>
+			</article>
+			<div class="portrait__container shrink-0">
+				<div class="portrait__primary">
+					<Image src={mainPortrait} alt="" />
+				</div>
+				<div class="portrait__secondary image-y-translation relative left-7 top-1/4 w-2/3" data-translate="-35">
+					<Image src={secondaryPortrait} alt="" class="-rotate-12" />
+				</div>
+			</div>
+		</div>
+	</ContainerDefault>
+</section>
+
+<style>
+	.portrait__container {
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: 1fr 3fr;
+	}
+	.portrait__primary {
+		grid-column: 3/9;
+		grid-row: 1/-1;
+	}
+	.portrait__secondary {
+		grid-column: 1/6;
+		grid-row-start: 2;
+	}
+</style>

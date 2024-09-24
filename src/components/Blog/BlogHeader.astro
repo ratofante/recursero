@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import ButtonMenu from '../ButtonMenu.astro';
+import ButtonTheme from '../ButtonTheme.astro';
+
+import Logo from '/src/assets/images/logo.png';
+
+interface Props {
+	classes?: string;
+}
+const { classes }: Props = Astro.props;
+---
+
+<header class="fixed left-0 right-0 top-0 z-40 h-[--header-height-sm] lg:h-[--header-height-lg]" class:list={[classes]}>
+	<div
+		class="relative z-50 mx-auto h-full max-w-2xl rounded-b-md bg-violet-200 px-2 shadow-md shadow-zinc-400 sm:px-4 md:px-4 lg:max-w-7xl dark:border-primary dark:bg-black dark:shadow-zinc-600"
+	>
+		<div class="flex h-full items-center justify-between">
+			<!-- Logo -->
+			<div class="relative grid h-6 place-items-center">
+				<a href="/" class="flex h-6 items-center gap-2 font-serif capitalize">
+					<Image src={Logo} alt="ESI se planifica" width={28} height={28} class="" />
+					<span class="hidden md:inline">se planifica</span>
+				</a>
+			</div>
+			<div class="ml-auto flex items-center">
+				<ButtonTheme />
+			</div>
+			<ButtonMenu classes="lg:hidden" />
+		</div>
+	</div>
+</header>

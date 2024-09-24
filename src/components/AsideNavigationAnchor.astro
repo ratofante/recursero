@@ -10,4 +10,15 @@ interface Props {
 const { target } = Astro.props;
 ---
 
-<div id={target} class="absolute" style="top: calc(calc(var(--header-height) + 2rem) * -1);"></div>
+<div id={target} class="aside__nav__anchor absolute"></div>
+
+<style>
+	.aside__nav__anchor {
+		top: calc(calc(var(--header-height-sm) + 2rem) * -1);
+	}
+	@media (min-width: 1024px) {
+		.aside__nav__anchor {
+			top: calc(calc(var(--header-height-lg) + 2rem) * -1);
+		}
+	}
+</style>

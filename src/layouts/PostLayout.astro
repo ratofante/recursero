@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import { SITE_TITLE } from '../consts';
 
 // components
-import MainLayout from './MainLayout.astro';
+import BlogLayout from './BlogLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<MainLayout title={`${SITE_TITLE} | ${frontmatter.data.title}`} description={frontmatter.data.resumen}>
+<BlogLayout title={`${SITE_TITLE} | ${frontmatter.data.title}`} description={frontmatter.data.resumen}>
 	<div class="aspect-auto overflow-hidden rounded-md">
 		<Image
 			class="h-full w-full object-cover object-center"
@@ -50,4 +50,4 @@ const { frontmatter } = Astro.props;
 
 		<slot />
 	</div>
-</MainLayout>
+</BlogLayout>

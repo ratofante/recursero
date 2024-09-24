@@ -1,34 +1,41 @@
 ---
-import { Image } from 'astro:assets';
-import ButtonMenu from './ButtonMenu.astro';
-import ButtonSearch from './ButtonSearch.astro';
+//components
+import Image from 'astro/components/Image.astro';
 import ButtonTheme from './ButtonTheme.astro';
+import ButtonMenu from '@components/ButtonMenu.astro';
 
-import Logo from '/src/assets/images/logo.png';
-
-interface Props {
-	classes?: string;
-}
-const { classes }: Props = Astro.props;
+//assets
+import LogoLight from '@assets/LOGO__LIGHT.svg';
+import LogoDark from '@assets/LOGO__DARK.svg';
+import LogoFullLight from '@assets/LOGO__FULL__LIGHT.svg';
+import LogoFullDark from '@assets/LOGO__FULL__DARK.svg';
 ---
 
-<header class="fixed left-0 right-0 top-0 z-40 h-[--header-height]" class:list={[classes]}>
-	<div
-		class="relative z-50 mx-auto h-full max-w-2xl rounded-b-md bg-white px-2 shadow-sm shadow-violet-200 sm:px-4 md:px-4 lg:max-w-7xl dark:border-primary dark:bg-black dark:shadow-zinc-600"
-	>
-		<div class="flex h-full items-center justify-between">
-			<!-- Logo -->
-			<div class="relative grid h-8 place-items-center">
-				<a href="/" class="flex items-center gap-2 font-serif capitalize">
-					<Image src={Logo} alt="ESI se planifica" width={36} height={36} />
-					<span class="hidden md:inline">se planifica</span>
-				</a>
-			</div>
-			<div class="ml-auto flex items-center">
-				<ButtonSearch />
-				<ButtonTheme />
-			</div>
-			<ButtonMenu classes="lg:hidden" />
+<header
+	class="fixed left-0 top-0 z-50 w-full border-b border-violet-400 bg-violet-50 p-2 shadow-sm shadow-violet-400 md:left-1/2 md:top-4 md:max-w-3xl md:-translate-x-1/2 md:rounded-full md:p-4 xl:max-w-4xl xl:p-6 dark:border-gray dark:bg-slate"
+>
+	<div class="flex items-center justify-between">
+		<div class="relative grid place-items-center">
+			<a href="/" class="flex items-center gap-2 font-serif">
+				<div class="h-6 xl:h-8">
+					<Image src={LogoLight} alt="ESI se planifica" class="h-full w-fit md:hidden dark:hidden" />
+					<Image
+						src={LogoFullLight}
+						alt="ESI se planifica"
+						class="hidden h-full w-fit md:block dark:hidden"
+					/>
+					<Image
+						src={LogoDark}
+						alt="ESI se planifica"
+						class="hidden h-full w-fit md:hidden dark:block dark:md:hidden"
+					/>
+					<Image src={LogoFullDark} alt="ESI se planifica" class="hidden h-full w-fit dark:md:block" />
+				</div>
+			</a>
 		</div>
+		<div class="ml-auto flex items-center">
+			<ButtonTheme />
+		</div>
+		<ButtonMenu />
 	</div>
 </header>

@@ -1,0 +1,30 @@
+---
+//components
+import ImageCover from '@components/Image/ImageCover.astro';
+import LinkPrimary from '@components/Link/LinkPrimary.astro';
+
+//assets
+import BG__SM from '@assets/images/home__hero/HOME__HERO__SM.jpg';
+import BG__LG from '@assets/images/home__hero/HOME__HERO__LG.jpg';
+import ContainerDefault from '@components/ContainerDefault.astro';
+---
+
+<section class="relative my-0 h-svh">
+	<div class="absolute left-0 top-0 z-0 h-full w-full">
+		<ImageCover src={BG__SM} alt="Un pasillo de escuela con aulas al costado" classes="lg:hidden" />
+		<ImageCover src={BG__LG} alt="Un pasillo de escuela con aulas al costado" classes="hidden lg:block" />
+	</div>
+	<ContainerDefault classes="relative z-10 flex h-full  flex-col py-16">
+		<div class="mt-auto">
+			<h1 class="mb-4 font-serif text-[64px] leading-[0.95] text-white sm:text-[74px] xl:text-[118px]">
+				Aulas <br /> Posibles
+			</h1>
+			<p
+				class="mb-4 max-w-[320px] text-lg font-light leading-[1.7] text-white opacity-60 sm:text-xl xl:max-w-[400px] xl:text-2xl"
+			>
+				Red de recursos para tu aula <br />De docentes, para docentes
+			</p>
+			<LinkPrimary href="/blog" label="Ver Blog" />
+		</div>
+	</ContainerDefault>
+</section>

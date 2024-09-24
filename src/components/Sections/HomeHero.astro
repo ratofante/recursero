@@ -1,17 +1,26 @@
 ---
+// components
+import ContainerDefault from '@components/ContainerDefault.astro';
+import LinkSpecial from '@components/Link/LinkSpecial.astro';
 
+//libs
+import { Image } from 'astro:assets';
+
+//assets
+import HERO from '@assets/LOGO__FULL__ALT__LIGHT.svg';
 ---
 
-<section>
-	<span class="tagname uppercase text-xs md:text-sm 2xl:text-lg font-bold tracking-wide opacity-80">
-		contenido educacional
-	</span>
-	<h1 class="heading-1 text-5xl tracking-tighter mb-6 mt-4 md:text-6xl lg:text-7xl">
-		Recursos para <br />la pedagogía
-	</h1>
-	<p
-		class="body-large text-lg mb-6 leading-8 max-w-[420px] md:text-xl md:leading-[2.25rem] lg:max-w-[520px] 2xl:text-2xl 2xl:leading-[2.75rem]"
-	>
-		Un proyecto para organizar, promover y difundir recursos, planificaciones e ideas para la pedagogía escolar.
-	</p>
+<section class="px-4 pb-16 pt-24 text-center">
+	<ContainerDefault>
+		<div class="mx-auto mb-2 w-full max-w-[320px] sm:max-w-[480px]">
+			<Image src={HERO} alt={'ESI se planifica'} class="h-full w-full" />
+		</div>
+		<h2
+			class="body-large text-slate-800-200 mx-auto mb-6 max-w-[380px] font-sans text-lg sm:text-xl sm:leading-[1.5] md:text-xl md:leading-[2.25rem] lg:max-w-[520px] 2xl:text-2xl 2xl:leading-[2.75rem]"
+		>
+			Red de recursos y planificaciones para tu aula. De docentes, para docentes.
+		</h2>
+		<LinkSpecial href="/blog" label="Ver Más" />
+		<!-- <Link href="/blog" label="Ver más" type="primary" size="lg" classes="mx-auto min-w-36 justify-center" /> -->
+	</ContainerDefault>
 </section>

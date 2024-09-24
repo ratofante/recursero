@@ -1,0 +1,68 @@
+---
+// components
+import NavigationMobile from '@components/Navigation/NavigationMobile.astro';
+import BaseHead from '@components/BaseHead.astro';
+import BlogHeader from '@components/Blog/BlogHeader.astro';
+import Navigation from '@components/Navigation/Navigation.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	aside?: boolean;
+}
+
+const { title, description, aside = true } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead {title} {description} />
+	</head>
+	<body class="max-w-screen overflow-x-hidden bg-white dark:bg-black">
+		<BlogHeader />
+		<main
+			id="page-content"
+			class="relative mx-auto flex min-h-screen max-w-2xl grid-cols-10 flex-col gap-2 lg:grid lg:max-w-7xl xl:gap-8"
+		>
+			<!-- Aside Desktop Menu -->
+			<div class="lg:col-span-2">
+				<aside class="sticky top-[--header-height-sm] hidden pt-8 lg:top-[--header-height-lg] lg:block">
+					<Navigation />
+				</aside>
+			</div>
+
+			<!-- Page Content -->
+			<div class="mt-[--header-height-sm] flex flex-col gap-2 pt-8 lg:col-span-8 lg:mt-[--header-height-lg]">
+				<!-- Content -->
+				<div class="relative flex flex-col-reverse gap-2 lg:flex-row">
+					<!-- Body -->
+					<div>
+						<slot name="title" />
+						<slot />
+					</div>
+					<!-- Content Navigation -->
+					<div
+						class="content__side__navigation h-fit w-full shrink-0 px-4 lg:sticky lg:w-64 lg:px-2 xl:px-8"
+						class:list={[{ hidden: !aside }]}
+					>
+						<slot name="aside" />
+					</div>
+				</div>
+			</div>
+		</main>
+		<NavigationMobile />
+	</body>
+</html>
+
+<style>
+	.content__side__navigation {
+		top: calc(var(--header-height-sm) + 2rem);
+	}
+
+	@media (min-width: 1024px) {
+		.content__side__navigation {
+			top: calc(var(--header-height-lg) + 2rem);
+		}
+	}
+</style>

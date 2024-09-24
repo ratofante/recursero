@@ -23,7 +23,8 @@ const { label, href, icon, type, size, classes, ...rest } = Astro.props as Props
 		classes,
 		{
 			'bg-violet-400 text-white': type === 'primary',
-			'border-2 border-primary text-violet-400': type === 'secondary',
+			'border-2 border-violet-950 text-violet-950 dark:border-violet-100 dark:text-violet-100':
+				type === 'secondary',
 			'': type === 'tertiary',
 			'aspect-square justify-center gap-0 px-0 py-0': icon && icon.type === 'icon',
 			'border-2 border-danger text-danger': type === 'destructive',
