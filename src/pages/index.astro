@@ -1,31 +1,20 @@
 ---
+//consts
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
+//layouts
 import MainLayout from '@layouts/MainLayout.astro';
-import HomeHero from '@components/Sections/HomeHero.astro';
-import Divisor from '@components/Elements/Divisor.astro';
+
+//components
+import HomeHero from '@components/Home/HomeHero.astro';
+import HomeTimeline from '@components/Home/HomeTimeline.astro';
+import HomeBlog from '@components/Home/HomeBlog.astro';
+import HomeAbout from '@components/Home/HomeAbout.astro';
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION} namespace="home">
 	<HomeHero />
-	<Divisor
-		image={{
-			path: '/src/assets/images/tools__background.jpg',
-			alt: 'Recursero, colección de elementos pedagógicos',
-		}}
-	/>
-	<HomeHero />
-	<Divisor
-		image={{
-			path: '/src/assets/images/tools__background.jpg',
-			alt: 'Recursero, colección de elementos pedagógicos',
-		}}
-	/>
-	<HomeHero />
-	<Divisor
-		image={{
-			path: '/src/assets/images/tools__background.jpg',
-			alt: 'Recursero, colección de elementos pedagógicos',
-		}}
-	/>
+	<HomeTimeline />
+	<HomeBlog />
+	<HomeAbout />
 </MainLayout>

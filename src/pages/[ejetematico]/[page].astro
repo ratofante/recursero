@@ -3,7 +3,7 @@
 import { slugify, capitalizeEachWord } from '@utils/stringsMethods';
 
 //components
-import MainLayout from '@layouts/MainLayout.astro';
+import BlogLayout from '@layouts/BlogLayout.astro';
 import CardPlanificationFull from '@components/card/CardPlanificationFull.astro';
 import TitleSimple from '@components/TitleSimple.astro';
 import Pagination from '@components/Pagination.astro';
@@ -39,7 +39,7 @@ const { page, eje } = Astro.props;
 const ejeData: EjeTematico = await getEntry('ejes-tematicos', eje.id);
 ---
 
-<MainLayout title={`${SITE_TITLE} | ${ejeData.data.title}`} description={ejeData.data.resumen}>
+<BlogLayout title={`${SITE_TITLE} | ${ejeData.data.title}`} description={ejeData.data.resumen}>
 	<TitleSimple title={capitalizeEachWord(ejeData.data.title)} />
 	<div class="px-4">
 		<p class="text-body mb-8 lg:mb-16">
@@ -51,4 +51,4 @@ const ejeData: EjeTematico = await getEntry('ejes-tematicos', eje.id);
 		</div>
 		<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
 	</div>
-</MainLayout>
+</BlogLayout>

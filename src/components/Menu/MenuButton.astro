@@ -1,0 +1,86 @@
+---
+interface Props {
+	classes?: string;
+}
+
+const { classes } = Astro.props;
+---
+
+<div class="relative w-14" class:list={[classes]}>
+	<button id="navigation-menu" class="absolute right-0 top-1/2 h-12 w-14 -translate-y-1/2">
+		<div class="relative overflow-hidden text-end font-semibold md:text-lg">
+			<div class="menu-open relative transition-transform duration-300">Menu</div>
+			<div
+				class="menu-close absolute right-0 top-0 translate-y-full rotate-6 transition-transform duration-300 dark:text-white"
+			>
+				Cerrar
+			</div>
+		</div>
+	</button>
+</div>
+
+<script>
+	import useDispatchEvent from '../../js/useDispatchEvent';
+	import type { EventDetail } from '../../types';
+	import type { CustomEventWithDetail } from '../../types';
+
+	const openCommand: EventDetail = {
+		command: 'open',
+	};
+	const closeCommand: EventDetail = {
+		command: 'close',
+	};
+
+	const menuBtn = document.getElementById('navigation-menu') as HTMLElement | null;
+	const menu = menuBtn?.querySelector('.menu-open') as HTMLElement | null;
+	const close = menuBtn?.querySelector('.menu-close') as HTMLElement | null;
+
+	const menuState = {
+		isOpen: false,
+		isTransitioning: false,
+	};
+
+	function setMenuToOpen() {
+		if (menuBtn) {
+			menu?.classList.add('-translate-y-full', '-rotate-6');
+			close?.classList.remove('translate-y-full', 'rotate-6');
+		}
+	}
+
+	function setMenuToClose() {
+		if (menuBtn) {
+			menu?.classList.remove('-translate-y-full', '-rotate-6');
+			close?.classList.add('translate-y-full', 'rotate-6');
+		}
+	}
+
+	function toggleMenu() {
+		if (!menuState.isOpen && !menuState.isTransitioning) {
+			menuState.isTransitioning = true;
+			setMenuToOpen();
+			useDispatchEvent('mobileMenuToggle', openCommand);
+		}
+
+		if (menuState.isOpen && !menuState.isTransitioning) {
+			menuState.isTransitioning = true;
+			setMenuToClose();
+			useDispatchEvent('mobileMenuToggle', closeCommand);
+		}
+	}
+
+	function transitionListener(ev: CustomEventWithDetail<{ menuOpen: boolean }>) {
+		console.log('triggered from menuTransitionFinished');
+		if (ev.detail.menuOpen) {
+			menuState.isOpen = true;
+			menuState.isTransitioning = false;
+		}
+		if (!ev.detail.menuOpen) {
+			setMenuToClose();
+			menuState.isOpen = false;
+			menuState.isTransitioning = false;
+		}
+	}
+
+	menuBtn?.addEventListener('click', toggleMenu);
+	window.addEventListener('menuTransitionFinished', transitionListener as EventListener);
+</script>

@@ -1,0 +1,137 @@
+---
+//components
+import ContainerDefault from '@components/ContainerDefault.astro';
+
+//libs
+import { Image } from 'astro:assets';
+
+// assets
+import timeline__01 from '@assets/images/home__timeline/timeline__01.jpg';
+import timeline__02 from '@assets/images/home__timeline/timeline__02.jpg';
+import timeline__03 from '@assets/images/home__timeline/timeline__03.jpg';
+import timeline__04 from '@assets/images/home__timeline/timeline__04.jpg';
+import timeline__05 from '@assets/images/home__timeline/timeline__05.jpg';
+---
+
+<section id="home__timeline" class="relative">
+	<ContainerDefault>
+		<div class="relative">
+			<!-- Portrait -->
+			<div class="relative z-10 mb-32 gap-8">
+				<div class="shrink-0">
+					<h2 class="section__title text-center leading-[1] text-slate md:text-left">Una Breve Historia</h2>
+					<h2 class="section__subtitle text-center font-light italic md:text-left">
+						De la idea a la realización
+					</h2>
+				</div>
+				<p
+					class="section__body mx-auto max-w-[420px] text-center text-gray md:max-w-max md:columns-2 md:text-left"
+				>
+					Desde el año 2022, he tenido el honor y la responsabilidad de desempeñar un papel crucial en la
+					formación de docentes en ejercicio dentro del marco de la prestigiosa Diplomatura Superior en
+					Educación Sexual Integral (ESI) de la Provincia de Buenos Aires. Esta labor, que considero no solo
+					un trabajo sino una vocación, me ha permitido contribuir significativamente al desarrollo
+					profesional de numerosos educadores comprometidos con la implementación integral de la ESI en sus
+					aulas.
+				</p>
+			</div>
+			<!-- Years -->
+			<div class="years__container relative flex flex-col">
+				<!--  BIG Year-->
+				<div class="timeline__bigyear absolute left-0 top-0 z-0 grid h-screen w-full">
+					<h6
+						class="self-none justify-self-center font-sans text-[152px] text-green opacity-20 md:text-[252px]"
+					>
+						2019
+					</h6>
+				</div>
+				<article
+					class="timeline__year border-t border-slate pb-12 pt-4 transition-all duration-500 md:w-[45%]"
+					data-year="2019"
+				>
+					<h6 class="text-[86px] text-gray xl:text-[124px]">2019</h6>
+					<div class="relative aspect-square">
+						<Image src={timeline__01} alt="" class="w-full" />
+					</div>
+					<div class="mt-4 space-y-4">
+						<h4 class="section__subtitle text-slate">ESI para la educación primaria</h4>
+						<p class="section__body">
+							Se inaugura el EDI "ESI para la Educación Primaria" en el ISFDyT N° 52, como espacio
+							curricular aprobado por el CAI para cumplir con la implementación de la ESI en la formación
+							docente inicial.
+						</p>
+					</div>
+				</article>
+				<article
+					class="timeline__year border-t border-slate pb-12 pt-4 transition-all duration-500 md:-mt-[30vh] md:w-[45%] md:self-end"
+					data-year="2020"
+				>
+					<h6 class="text-[86px] text-gray xl:text-[124px]">2020</h6>
+					<div class="relative aspect-square">
+						<Image src={timeline__02} alt="" class="w-full" />
+					</div>
+					<div class="mt-4 space-y-4">
+						<h4 class="section__subtitle text-slate">Enseñanza virtual</h4>
+						<p class="section__body">
+							En contexto de ASPO, asumo la División C del EDI de ESI. Adaptamos la enseñanza a la
+							virtualidad con encuentros sincrónicos, foros y aulas virtuales, y reconfiguré la evaluación
+							en propuestas didácticas grupales que abordaron los cinco ejes de la ESI.
+						</p>
+					</div>
+				</article>
+				<article
+					class="timeline__year border-t border-slate pb-12 pt-4 transition-all duration-500 md:-mt-[30vh] md:w-[45%]"
+					data-year="2021"
+				>
+					<h6 class="text-[86px] text-gray xl:text-[124px]">2021</h6>
+					<div class="relative aspect-square">
+						<Image src={timeline__03} alt="" class="w-full" />
+					</div>
+					<div class="mt-4 space-y-4">
+						<h4 class="section__subtitle text-slate">Desarrollar competencias</h4>
+						<p class="section__body">
+							La cátedra de ESI continuó de forma remota, enfocada en integrar TICs para desarrollar
+							competencias digitales esenciales como la investigación en línea, el trabajo colaborativo y
+							la creación de contenidos.
+						</p>
+					</div>
+				</article>
+				<article
+					class="timeline__year border-t border-slate pb-12 pt-4 transition-all duration-500 md:-mt-[30vh] md:w-[45%] md:self-end"
+					data-year="2023"
+				>
+					<h6 class="text-[86px] text-gray xl:text-[124px]">2023</h6>
+					<div class="relative aspect-square">
+						<Image src={timeline__04} alt="" class="w-full" />
+					</div>
+					<div class="mt-4 space-y-4">
+						<h4 class="section__subtitle text-slate">Desarrollar competencias</h4>
+						<p class="section__body">
+							La cátedra de ESI continuó de forma remota, enfocada en integrar TICs para desarrollar
+							competencias digitales esenciales como la investigación en línea, el trabajo colaborativo y
+							la creación de contenidos.
+						</p>
+					</div>
+				</article>
+				<article
+					class="timeline__year border-t border-slate pb-12 pt-4 transition-all duration-500 md:-mt-[30vh] md:w-[45%]"
+					data-year="2024"
+				>
+					<h6 class="text-[86px] text-gray xl:text-[124px]">2024</h6>
+					<div class="relative aspect-square">
+						<Image src={timeline__05} alt="" class="w-full" />
+					</div>
+					<div class="mt-4 space-y-4">
+						<h4 class="section__subtitle text-slate">
+							Lanzamiento: E<span class="font-medium text-green">SI</span> se planifica
+						</h4>
+						<p class="section__body">
+							Lanzamos "E-SÍ se planifica", un blog que exhibe producciones estudiantiles del EDI,
+							destacando el enfoque de derechos, género y cuidados en la ESI bonaerense.
+						</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</ContainerDefault>
+</section>

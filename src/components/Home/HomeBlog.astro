@@ -1,0 +1,195 @@
+---
+// Components
+import ContainerDefault from '@components/ContainerDefault.astro';
+import LinkPrimary from '@components/Link/LinkPrimary.astro';
+
+// Libs
+import { Image } from 'astro:assets';
+
+//Assets
+import IMG01 from '@assets/images/home__blog/convivencia__derechos.jpg';
+import IMG02 from '@assets/images/home__blog/cuerpos__salud__cuidados.jpg';
+import IMG03 from '@assets/images/home__blog/genero__diversidad.jpg';
+---
+
+<section class="relative overflow-x-hidden">
+	<div class="absolute left-0 top-0 z-0 h-1/2 max-h-[50vh] w-full bg-beige"></div>
+	<ContainerDefault classes="relative z-10">
+		<!-- Mobile & Desktop -->
+		<div class="flex flex-col gap-8 sm:hidden lg:flex lg:flex-row">
+			<!-- Center Slide & Title-->
+			<div class="lg:order-2">
+				<div class="mb-16 space-y-2 text-center">
+					<span class="text-xs font-medium uppercase tracking-wider text-gray">nuestro blog</span>
+					<h2 class="section__title text-slate">
+						Proyecto E<span class="itelic font-semibold text-green">SI</span><br />
+						se planifica
+					</h2>
+					<h6 class="section__subtitle text-gray">Ejes temáticos</h6>
+				</div>
+				<article class="my-8 lg:my-0">
+					<div class="relative">
+						<h5
+							class="absolute left-0 top-16 z-10 w-full px-8 text-center text-[36px] leading-[1.2] text-white"
+						>
+							Cuerpos, Salud <br />y Cuidados
+						</h5>
+						<Image
+							src={IMG02}
+							alt="Cuerpos, Salud y Cuidados"
+							class="relative z-0 h-full w-full object-cover object-center"
+							loading="lazy"
+							quality={80}
+						/>
+					</div>
+					<div class="mt-4 flex flex-col items-center space-y-4">
+						<p class="section__body text-center text-gray">
+							Derechos de las infancias y convivencia respetuosa en la diversidad.
+						</p>
+						<LinkPrimary href="/cuerpos-salud-cuidados/1" label="Ver más" />
+					</div>
+				</article>
+			</div>
+
+			<!-- Left -->
+			<article class="my-8 lg:order-1 lg:my-0 lg:pt-36">
+				<div class="relative">
+					<h5
+						class="absolute left-0 top-16 z-10 w-full px-8 text-center text-[36px] leading-[1.2] text-white"
+					>
+						Convivencia <br />y Derechos
+					</h5>
+					<Image
+						src={IMG01}
+						alt="Convivencia y derechos"
+						class="relative z-0 h-full w-full object-cover object-center"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+				<div class="mt-4 flex flex-col items-center space-y-4">
+					<p class="section__body text-center text-gray">
+						Derechos de las infancias y convivencia respetuosa en la diversidad.
+					</p>
+					<LinkPrimary href="/convivencia-derechos/1" label="Ver más" />
+				</div>
+			</article>
+
+			<!-- Right -->
+			<article class="my-8 lg:order-3 lg:my-0 lg:pt-36">
+				<div class="relative">
+					<h5
+						class="absolute left-0 top-16 z-10 w-full px-8 text-center text-[36px] leading-[1.2] text-white"
+					>
+						Género y<br />Diversidad
+					</h5>
+					<Image
+						src={IMG03}
+						alt="Género y Diversidad"
+						class="relative z-0 h-full w-full object-cover object-center"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+				<div class="mt-4 flex flex-col items-center space-y-4">
+					<p class="section__body text-center text-gray">
+						Derechos de las infancias y convivencia respetuosa en la diversidad.
+					</p>
+					<LinkPrimary href="/blog/genero-diversidad" label="Ver más" />
+				</div>
+			</article>
+		</div>
+
+		<!-- Tablet -->
+		<div class="hidden sm:block lg:hidden">
+			<div class="mb-16 space-y-2 text-center">
+				<span class="text-xs font-medium uppercase tracking-wider text-gray">nuestro blog</span>
+				<h2 class="text-[36px] leading-[1.2] text-slate xl:text-[52px]">
+					Proyecto E<span class="itelic font-semibold text-green">SI</span><br />
+					se planifica
+				</h2>
+				<h6 class="text-[22px] italic text-gray">Ejes temáticos</h6>
+			</div>
+
+			<div id="blog-slides">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<article>
+							<div class="relative">
+								<h5
+									class="absolute left-0 top-16 z-10 w-full px-8 text-center text-[36px] leading-[1.2] text-white"
+								>
+									Cuerpos, Salud <br />y Cuidados
+								</h5>
+								<Image
+									src={IMG02}
+									alt="Cuerpos, Salud y Cuidados"
+									class="relative z-0 h-full w-full object-cover object-center"
+									loading="lazy"
+									quality={80}
+								/>
+							</div>
+							<div class="mt-4 flex flex-col items-center space-y-4">
+								<p class="section__body text-center text-gray">
+									Derechos de las infancias y convivencia respetuosa en la diversidad.
+								</p>
+								<LinkPrimary href="/cuerpos-salud-cuidados/1" label="Ver más" />
+							</div>
+						</article>
+					</div>
+					<div class="swiper-slide">
+						<article class="lg:order-1 lg:pt-36">
+							<div class="relative">
+								<h5
+									class="absolute left-0 top-16 z-10 w-full px-8 text-center text-[36px] leading-[1.2] text-white"
+								>
+									Convivencia <br />y Derechos
+								</h5>
+								<Image
+									src={IMG01}
+									alt="Convivencia y derechos"
+									class="relative z-0 h-full w-full object-cover object-center"
+									loading="lazy"
+									quality={80}
+								/>
+							</div>
+							<div class="mt-4 flex flex-col items-center space-y-4">
+								<p class="section__body text-center text-gray">
+									Derechos de las infancias y convivencia respetuosa en la diversidad.
+								</p>
+								<LinkPrimary href="/blog/convivencia-y-derechos" label="Ver más" />
+							</div>
+						</article>
+					</div>
+					<div class="swiper-slide">
+						<article class="lg:order-3 lg:pt-36">
+							<div class="relative">
+								<h5
+									class="absolute left-0 top-16 z-10 w-full px-8 text-center text-[36px] leading-[1.2] text-white"
+								>
+									Género y<br />Diversidad
+								</h5>
+								<Image
+									src={IMG03}
+									alt="Género y Diversidad"
+									class="relative z-0 h-full w-full object-cover object-center"
+									loading="lazy"
+									quality={80}
+								/>
+							</div>
+							<div class="mt-4 flex flex-col items-center space-y-4">
+								<p class="section__body text-center text-gray">
+									Derechos de las infancias y convivencia respetuosa en la diversidad.
+								</p>
+								<LinkPrimary href="/blog/genero-diversidad" label="Ver más" />
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ContainerDefault>
+</section>
+<script>
+	import 'swiper/css';
+</script>

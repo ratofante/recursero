@@ -1,15 +1,17 @@
 ---
-import NavigationMobile from '@components/Navigation/NavigationMobile.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Navigation from '@components/Navigation/Navigation.astro';
+//components
+import BaseHead from '@components/BaseHead.astro';
+import MenuNavigation from '@components/Menu/MenuNavigation.astro';
+import Header from '@components/Header.astro';
+import Loader from '@components/Loader.astro';
+
 interface Props {
 	title: string;
 	description: string;
-	aside?: boolean;
+	namespace: string;
 }
 
-const { title, description, aside = true } = Astro.props;
+const { title, description, namespace } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,45 +19,13 @@ const { title, description, aside = true } = Astro.props;
 	<head>
 		<BaseHead {title} {description} />
 	</head>
-	<body class="max-w-screen overflow-x-hidden">
-		<Header />
-		<!-- <Navigation /> -->
-		<main
-			id="page-content"
-			class="relative mx-auto flex min-h-screen max-w-2xl grid-cols-10 flex-col gap-2 lg:grid lg:max-w-7xl xl:gap-8"
-		>
-			<!-- Aside Desktop Menu -->
-			<div class="lg:col-span-2">
-				<aside class="sticky top-[--header-height] hidden pt-8 lg:block">
-					<Navigation />
-				</aside>
-			</div>
-
-			<!-- Page Content -->
-			<div class="mt-[--header-height] flex flex-col gap-2 pt-8 lg:col-span-8">
-				<!-- Content -->
-				<div class="relative flex flex-col-reverse gap-2 lg:flex-row">
-					<!-- Body -->
-					<div>
-						<slot name="title" />
-						<slot />
-					</div>
-					<!-- Content Navigation -->
-					<div
-						class="content__side__navigation h-fit w-full shrink-0 px-4 lg:sticky lg:w-64 lg:px-2 xl:px-8"
-						class:list={[{ hidden: !aside }]}
-					>
-						<slot name="aside" />
-					</div>
-				</div>
-			</div>
+	<body class="max-w-screen bg-surface-light overflow-x-hidden dark:bg-black" data-barba="wrapper">
+		<!-- <Header /> -->
+		<Loader />
+		<main data-barba="container" data-barba-namespace={namespace}>
+			<slot />
 		</main>
-		<NavigationMobile />
+		<MenuNavigation />
 	</body>
 </html>
-
-<style>
-	.content__side__navigation {
-		top: calc(var(--header-height) + 2rem);
-	}
-</style>
+<script src="../js/app.js"></script>

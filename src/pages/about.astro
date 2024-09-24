@@ -1,0 +1,15 @@
+---
+//consts
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+//layouts
+import MainLayout from '@layouts/MainLayout.astro';
+
+//components
+---
+
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<main id="page-content" data-barba="container" data-barba-namespace="about">
+		<h2>About</h2>
+	</main>
+</MainLayout>

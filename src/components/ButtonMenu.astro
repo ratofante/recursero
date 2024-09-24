@@ -7,11 +7,11 @@ const { classes } = Astro.props;
 ---
 
 <div class="relative w-14" class:list={[classes]}>
-	<button data-state="closed" id="navigation-menu" class="absolute right-0 top-1/2 -translate-y-1/2 w-14 h-12">
-		<div class="relative text-end font-semibold overflow-hidden md:text-lg">
-			<div class="relative menu-open transition-transform duration-300">Menu</div>
+	<button data-state="closed" id="navigation-menu" class="absolute right-0 top-1/2 h-12 w-14 -translate-y-1/2">
+		<div class="relative overflow-hidden text-end font-semibold md:text-lg">
+			<div class="menu-open relative transition-transform duration-300">Menu</div>
 			<div
-				class="dark:text-white absolute menu-close right-0 top-0 translate-y-full rotate-6 transition-transform duration-300"
+				class="menu-close absolute right-0 top-0 translate-y-full rotate-6 transition-transform duration-300 dark:text-white"
 			>
 				Cerrar
 			</div>
@@ -52,12 +52,12 @@ const { classes } = Astro.props;
 
 	function openMenu() {
 		setMenuToOpen();
-		useDispatchEvent('mobileMenuToggle', openCommand);
+		useDispatchEvent('mobileBlogMenuToggle', openCommand);
 	}
 
 	function closeMenu() {
 		setMenuToClose();
-		useDispatchEvent('mobileMenuToggle', closeCommand);
+		useDispatchEvent('mobileBlogMenuToggle', closeCommand);
 	}
 
 	function toggleMenu() {

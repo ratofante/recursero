@@ -1,0 +1,150 @@
+---
+import ContainerDefault from '@components/ContainerDefault.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<nav
+	id="menu__nav"
+	class="dark:bg-slate-800 pointer-events-none fixed left-0 top-0 z-40 h-svh w-full bg-violet-400 opacity-0"
+>
+	<ContainerDefault classes="h-full">
+		<div class="flex h-full flex-col pb-16 pt-36">
+			<div>
+				<ul class="group space-y-4 text-black">
+					<li class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20">
+						<a href="/" class="page-link nav-anim font-serif text-4xl text-white">Home</a>
+					</li>
+					<li class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20">
+						<a href="/about" class="page-link nav-anim font-serif text-4xl text-white">Historia</a>
+					</li>
+					<li class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20">
+						<a href="/blog" class="page-link nav-anim font-serif text-4xl text-white">Blog</a>
+					</li>
+					<li class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20">
+						<a href="/information" class="page-link nav-anim font-serif text-4xl text-white">Información</a>
+					</li>
+					<li class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20">
+						<a href="/contact" class="page-link nav-anim font-serif text-4xl text-white">Contacto</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mt-auto border-t border-gray pt-6">
+				<div>
+					<h6 class="nav-anim mb-4 font-serif text-xl font-light text-white opacity-70">Redes & Contacto</h6>
+					<ul class="group flex w-fit space-x-2">
+						<li
+							class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20"
+						>
+							<a href="" class="nav-anim">
+								<Icon name="ion:logo-instagram" width={24} height={24} />
+							</a>
+						</li>
+						<li
+							class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20"
+						>
+							<a href="" class="nav-anim">
+								<Icon name="ion:logo-linkedin" width={24} height={24} />
+							</a>
+						</li>
+						<li
+							class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20"
+						>
+							<a href="" class="nav-anim">
+								<Icon name="ion:logo-whatsapp" width={24} height={24} />
+							</a>
+						</li>
+						<li
+							class="opacity-70 transition-opacity duration-200 hover:!opacity-100 group-hover:opacity-20"
+						>
+							<a href="" class="nav-anim">
+								<Icon name="ion:mail" width={24} height={24} />
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="mt-12 space-y-2">
+					<h6 class="nav-anim font-serif text-xs font-light tracking-wide opacity-70">
+						AulasPosibles&copy;{new Date().getFullYear()}
+					</h6>
+					<h6 class="nav-anim font-serif text-xs font-light tracking-wide opacity-70">
+						Site made by <a href="https://rgw-ui-portfolio.vercel.app/" target="_blank"
+							>Rodrigo G. Wilkens</a
+						>
+					</h6>
+				</div>
+			</div>
+		</div>
+	</ContainerDefault>
+</nav>
+
+<script>
+	//libs
+	import gsap from 'gsap';
+
+	//utils
+	import useDispatchEvent from 'src/js/useDispatchEvent';
+
+	//types
+	import type { CustomEventWithDetail } from '../../types';
+	import type { EventDetail } from '../../types';
+
+	const openMenuFinish: EventDetail = { menuOpen: true };
+	const closeMenuFinish: EventDetail = { menuOpen: false };
+
+	const menuNav = document.getElementById('menu__nav') as HTMLElement;
+	const pageLinks = menuNav.querySelectorAll('.page-link') as NodeListOf<HTMLElement>;
+	const animElements = document.querySelectorAll('.nav-anim') as NodeListOf<HTMLElement>;
+
+	function openMenu() {
+		const tl = gsap.timeline({
+			onStart: () => {
+				document.documentElement.classList.add('overflow-hidden');
+			},
+			onComplete: () => {
+				menuNav.classList.remove('pointer-events-none');
+				useDispatchEvent('menuTransitionFinished', openMenuFinish);
+			},
+		});
+		tl.to(menuNav, { opacity: 1 }).fromTo(
+			animElements,
+			{
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				duration: 0.3,
+				stagger: 0.1,
+			},
+			0.2
+		);
+		return tl;
+	}
+
+	function closeMenu() {
+		const tl = gsap.timeline({
+			onStart: () => {
+				menuNav.classList.add('pointer-events-none');
+				document.documentElement.classList.remove('overflow-hidden');
+			},
+			onComplete: () => {
+				useDispatchEvent('menuTransitionFinished', closeMenuFinish);
+			},
+		});
+		tl.to(menuNav, { opacity: 0 }).to(animElements, {
+			opacity: 0,
+			duration: 0.3,
+		});
+		return tl;
+	}
+
+	function menuToggleListener(ev: CustomEventWithDetail<{ command: string }>) {
+		if (ev.detail.command === 'open') openMenu();
+		if (ev.detail.command === 'close') closeMenu();
+	}
+
+	pageLinks.forEach((link) => {
+		link.addEventListener('click', closeMenu);
+	});
+
+	addEventListener('mobileMenuToggle', menuToggleListener as EventListener);
+</script>
