@@ -69,7 +69,6 @@ const { classes } = Astro.props;
 	}
 
 	function transitionListener(ev: CustomEventWithDetail<{ menuOpen: boolean }>) {
-		console.log('triggered from menuTransitionFinished');
 		if (ev.detail.menuOpen) {
 			menuState.isOpen = true;
 			menuState.isTransitioning = false;

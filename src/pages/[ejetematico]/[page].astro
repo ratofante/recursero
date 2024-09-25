@@ -22,7 +22,6 @@ type EjeTematico = CollectionEntry<'ejes-tematicos'>;
 export const getStaticPaths = async ({ paginate }: { paginate: PaginateFunction }) => {
 	const allPlanifications: Planification[] = await getCollection('planifications');
 	const ejes = [...new Set(allPlanifications.map((plani: Planification) => plani.data.ejes).flat())];
-	console.log(ejes);
 	return ejes.flatMap((eje) => {
 		const planiByEje = allPlanifications.filter((plani: Planification) =>
 			plani.data.ejes.some((ejeObject) => ejeObject.id === eje.id)
