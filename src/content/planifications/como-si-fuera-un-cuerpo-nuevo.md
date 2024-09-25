@@ -1,30 +1,30 @@
 ---
-title: 'como si fuera un cuerpo nuevo'
-ejes: ['cuerpos-salud-cuidados']
-authors: ['Stella Galli', 'Micaela Alanis','Mayra Montes', 'Rocio Gallardo']
-target: 'segundo ciclo'
-resumen: 'Trabajamos los cambios físicos y emocionales de la pubertad, utilizando la revista “Cambios que se ven y se sienten” y actividades reflexivas para promover el reconocimiento y respeto de estos procesos según la vivencia de cada uno/a.'
-cover: '/src/assets/images/blog__01.jpg'
-coverAlt: 'como si fuera un cuerpo nuevo'
+title: "como si fuera un cuerpo nuevo"
+ejes: ["cuerpos-salud-cuidados"]
+authors: ["Stella Galli", "Micaela Alanis", "Mayra Montes", "Rocio Gallardo"]
+target: "segundo ciclo"
+resumen: "Trabajamos los cambios físicos y emocionales de la pubertad, utilizando la revista “Cambios que se ven y se sienten” y actividades reflexivas para promover el reconocimiento y respeto de estos procesos según la vivencia de cada uno/a."
+cover: "/src/assets/images/post__cuerpos.jpg"
+coverAlt: "como si fuera un cuerpo nuevo"
 ---
 
 ## Lineamiento/s de ESI
 
-- Los procesos de crecimiento, desarrollos y maduración.
-- Los cambios que se ven y se sienten en la pubertad.
+-   Los procesos de crecimiento, desarrollos y maduración.
+-   Los cambios que se ven y se sienten en la pubertad.
 
 ## Contenidos de otras áreas
 
 ### Ciencias Naturales
 
-- El avance en el proceso del  reconocimiento del cuerpo y sus distintas partes y en la identificación de las particularidades, en las diferentes etapas evolutivas.
-- El reconocimiento de las implicancias afectivas de los cambios en la infancia y pubertad.  La valoración de los cambios en los sentimientos que se producen. El miedo, la vergüenza, el pudor, la alegría, la tristeza, el placer. El derecho a la intimidad y el respeto a la intimidad de otros/as.
+-   El avance en el proceso del reconocimiento del cuerpo y sus distintas partes y en la identificación de las particularidades, en las diferentes etapas evolutivas.
+-   El reconocimiento de las implicancias afectivas de los cambios en la infancia y pubertad. La valoración de los cambios en los sentimientos que se producen. El miedo, la vergüenza, el pudor, la alegría, la tristeza, el placer. El derecho a la intimidad y el respeto a la intimidad de otros/as.
 
 ## Recursos
 
-- Revista “Cambios que se ven y se sienten”: ['Cambios que se ven y se sienten. Educación sexual integral. Para saber más sobre la pubertad']([Revista “Cambios que se ven y se sienten”: Cambios que se ven y se sienten. Educación sexual integral. Para saber más sobre la pubertad](https://bancos.salud.gob.ar/recurso/cambios-que-se-ven-y-se-sienten-educacion-sexual-integral-para-saber-mas-sobre-la-pubertad))
+-   Revista “Cambios que se ven y se sienten”: ['Cambios que se ven y se sienten. Educación sexual integral. Para saber más sobre la pubertad']([Revista “Cambios que se ven y se sienten”: Cambios que se ven y se sienten. Educación sexual integral. Para saber más sobre la pubertad](https://bancos.salud.gob.ar/recurso/cambios-que-se-ven-y-se-sienten-educacion-sexual-integral-para-saber-mas-sobre-la-pubertad))
 
-- Afiche, buzón, papeles.
+-   Afiche, buzón, papeles.
 
 ## Actividades
 
@@ -33,7 +33,7 @@ Dichas ilustraciones estarán pegadas en un afiche en donde se trabajará las ac
 Luego se les pedirá que en un papel, individualmente y de forma anónima, escriban o dibujen algún cambio corporal que descubrieron y que, además, mencionen cómo se sintieron en el momento de descubrir dicho cambio (con vergüenza, miedo, alegría, preocupación, entre otros afectos). La o el docente ofrecerá un buzón para guardar los registros.
 
 A continuación se les preguntará:
- ¿Existe más cambios corporales además de las ilustraciones vistas previamente?
+¿Existe más cambios corporales además de las ilustraciones vistas previamente?
 ¿Todas y todos nos sentimos a gusto con estos cambios corporales que pueden surgir?
 ¿Todas y todos tenemos cambios corporales al mismo tiempo?
 
