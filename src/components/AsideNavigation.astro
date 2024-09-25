@@ -24,7 +24,7 @@ const { title, entries } = Astro.props;
 		<Accordion>
 			<div
 				slot="trigger"
-				class="accordion__trigger mb-2 flex justify-between font-medium text-secondary dark:text-pink-300"
+				class="accordion__trigger text-secondary mb-2 flex justify-between font-medium dark:text-pink-300"
 			>
 				{title}
 				<div class="trailing__icon transition-transform duration-100">
@@ -63,7 +63,7 @@ const { title, entries } = Astro.props;
 	</div>
 
 	<div class="hidden lg:block">
-		<div class="mb-2 font-medium text-secondary dark:text-pink-300">
+		<div class="text-secondary mb-2 font-medium dark:text-pink-300">
 			{title}
 		</div>
 		<ul>
@@ -72,7 +72,7 @@ const { title, entries } = Astro.props;
 					<li class="mb-2">
 						<button
 							data-target={`${entry.slug}`}
-							class="aside__link text-sm text-secondary opacity-80 hover:text-violet-400 dark:text-white dark:hover:text-pink-300"
+							class="aside__link text-secondary text-sm opacity-80 hover:text-violet-400 dark:text-white dark:hover:text-pink-300"
 						>
 							{capitalizeEachWord(entry.name)}
 						</button>
@@ -82,7 +82,7 @@ const { title, entries } = Astro.props;
 									<li>
 										<button
 											data-target={`${sub.slug}`}
-											class="aside__link text-xs text-secondary opacity-80 hover:text-violet-400 dark:text-white dark:hover:text-pink-300"
+											class="aside__link text-secondary text-xs opacity-80 hover:text-violet-400 dark:text-white dark:hover:text-pink-300"
 										>
 											- {capitalizeEachWord(sub.name)}
 										</button>
@@ -102,7 +102,6 @@ const { title, entries } = Astro.props;
 	asideLinks.forEach((link) => {
 		link.addEventListener('click', () => {
 			const target = document.querySelector(`#${link.dataset.target}`) as HTMLElement | null;
-			console.log(link.dataset.target, target);
 			target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		});
 	});

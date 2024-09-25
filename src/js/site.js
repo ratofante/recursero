@@ -7,7 +7,7 @@ import barba from '@barba/core';
 gsap.registerPlugin(ScrollTrigger);
 
 //components
-import HistoryTimeline from './components/HistoryTimeline';
+//import HistoryTimeline from './components/HistoryTimeline';
 import ImagesYTranslation from './components/ImagesYTranslation';
 import HomeBlog from './components/HomeBlog.js';
 
@@ -39,7 +39,7 @@ export default class Site {
 	initComponents() {
 		//Home
 		HomeBlog();
-		HistoryTimeline();
+		//HistoryTimeline();
 
 		//General
 		ImagesYTranslation();

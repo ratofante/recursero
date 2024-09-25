@@ -15,7 +15,6 @@ export default function ImagesYTranslation() {
 
 	images.forEach((container) => {
 		const image = container.querySelector('img');
-		console.log(image, container.dataset.translate, container.dataset.speed);
 
 		return gsap
 			.timeline({
