@@ -7,14 +7,14 @@ import MainLayout from '@layouts/MainLayout.astro';
 
 //components
 import HomeHero from '@components/Home/HomeHero.astro';
-import HomeTimeline from '@components/Home/HomeTimeline.astro';
+//import HomeTimeline from '@components/Home/HomeTimeline.astro';
 import HomeBlog from '@components/Home/HomeBlog.astro';
 import HomeAbout from '@components/Home/HomeAbout.astro';
 ---
 
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION} namespace="home">
 	<HomeHero />
-	<HomeTimeline />
+	<!-- <HomeTimeline /> -->
 	<HomeBlog />
 	<HomeAbout />
 </MainLayout>

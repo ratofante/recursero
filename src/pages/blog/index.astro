@@ -15,6 +15,7 @@ import type { CollectionEntry } from 'astro:content';
 
 //types
 import type { Eje, AsideNavigationEntry } from '@types';
+import { Icon } from 'astro-icon/components';
 
 const planifications: CollectionEntry<'planifications'>[] = await getCollection('planifications');
 const ejesTematicos: CollectionEntry<'ejes-tematicos'>[] = await getCollection('ejes-tematicos');
@@ -51,22 +52,27 @@ ejesTematicos.forEach((eje) => {
 ---
 
 <BlogLayout title={`${SITE_TITLE} | Blog`} description={SITE_DESCRIPTION}>
-	<TitleSimple title="Blog" classes="lg:mb-16" />
+	<TitleSimple title="Blog 'ESI se planifica'" classes="lg:mb-16" />
 	<div class="relative px-4">
 		<AsideNavigationAnchor target="planificaciones-esi" />
-		<h4 class="mb-4 text-pretty text-3xl font-medium lg:mb-8 lg:text-4xl">Planificaciones para la ESI</h4>
+		<h4 class="mb-4 text-pretty text-3xl font-medium lg:mb-8 lg:text-4xl">
+			Red de recursos y planificaciones. De docentes para docentes.
+		</h4>
 		<p class="text-body mb-16">
-			En esta sección encontrarás una recopilación de recursos educativos enfocados en la Educación Sexual
-			Integral (ESI). Esta sección está diseñada para abordar temáticas fundamentales que promueven el respeto, la
-			igualdad, y la convivencia en una sociedad diversa. Cada eje temático es una herramienta educativa que
-			permite explorar desde los derechos de las infancias hasta la promoción de hábitos saludables y la
-			valoración de la diversidad en todas sus formas.<br /><br />
+			En esta sección encontrarás una selección de planificaciones diseñadas por las y los estudiantes de 2° C del
+			Profesorado de Educación Primaria del ISFDyT N° 52 de San Isidro. Se trata de propuestas didácticas que
+			garantizan el abordaje de los contenidos de Educación Sexual Integral para el Nivel Primario.<br /><br />
 
-			Los tres ejes que articulan estos contenidos son: "Convivencia y derechos", que busca fomentar el respeto y
-			la empatía en una sociedad plural; "Cuerpos, salud y cuidados", centrado en la valoración del cuerpo y la
-			promoción de hábitos saludables; y "Género y diversidad", enfocado en problematizar estereotipos de género y
-			promover la igualdad y el respeto por la diversidad. Estos ejes son esenciales para formar ciudadanos
-			conscientes y comprometidos con la realidad social.
+			Las planificaciones están organizadas en tres secciones: “Convivencia y Derechos”, “Cuerpos, salud y
+			cuidados” y “Género y Diversidad”. Reflejan así el entrecruzamiento de los cinco ejes conceptuales de la ESI
+			según la Resolución N° 340/18 del CFE (<a
+				href="https://www.argentina.gob.ar/sites/default/files/anexo_resolucion_cfe_340_18_0.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-xs font-medium text-blue-500"
+				><Icon name="ion:md-download" width={18} height={18} class="inline" /></a
+			>). En todas ellas está presente el abordaje transversal de los lineamientos de la ESI en diferentes áreas
+			curriculares. ¡A recorrerlas e inspirarse!
 		</p>
 	</div>
 	<SectionPlanificationsGroup ejes={ejes} />

@@ -1,27 +1,27 @@
 ---
-title: 'Igualdades en nuestras diferencias'
-ejes: ['convivencia-derechos']
-authors: ['Juliana Alcaraz', 'Evelin Sepulveda', 'Rocío Ruiz']
-target: 'primer ciclo'
+title: "Igualdades en nuestras diferencias"
+ejes: ["convivencia-derechos"]
+authors: ["Juliana Alcaraz", "Evelin Sepulveda", "Rocío Ruiz"]
+target: "primer ciclo"
 resumen: 'Utilizamos el audiocuento "Orejas de mariposa" para identificar y reflexionar sobre comportamientos discriminatorios, fomentar el respeto por la diversidad y enseñar sobre los Derechos del Niño a través de situaciones cotidianas. '
-cover: '/src/assets/images/blog__01.jpg'
-coverAlt: 'Igualdades en nuestras diferencias'
+cover: "/src/assets/images/post__convivencia.jpg"
+coverAlt: "Igualdades en nuestras diferencias"
 ---
 
 ## Lineamiento/s de ESI
 
-- La superación de los prejuicios y las actitudes discriminatorias.
-- El cuerpo humano como totalidad con necesidades de afecto, cuidado y valoración.
-- La diversidad en las personas: apariencia física, orientación sexual e identidad de género.
-- Los vínculos socio afectivos con los pares, los compañeros, las familias y las relaciones de pareja.
+-   La superación de los prejuicios y las actitudes discriminatorias.
+-   El cuerpo humano como totalidad con necesidades de afecto, cuidado y valoración.
+-   La diversidad en las personas: apariencia física, orientación sexual e identidad de género.
+-   Los vínculos socio afectivos con los pares, los compañeros, las familias y las relaciones de pareja.
 
 ## Contenidos de otras áreas
 
 ### Prácticas del lenguaje
 
-- La identificación de los roles adjudicados a niños y niñas en publicidades, libros de cuentos y programas televisivos según su edad. El trabajo en el aula sobre cualquier forma de discriminación.
-- La construcción de habilidades para expresar la defensa de su integridad personal (biopsíquica y espiritual).
-- La valoración de las personas independientemente de su apariencia, identidad y orientación sexual.
+-   La identificación de los roles adjudicados a niños y niñas en publicidades, libros de cuentos y programas televisivos según su edad. El trabajo en el aula sobre cualquier forma de discriminación.
+-   La construcción de habilidades para expresar la defensa de su integridad personal (biopsíquica y espiritual).
+-   La valoración de las personas independientemente de su apariencia, identidad y orientación sexual.
 
 ## Recursos
 
@@ -37,10 +37,10 @@ Se iniciará la propuesta presentando el audiocuento titulado "Orejas de maripos
 
 Una vez finalizado el cuento se realizarán preguntas que pongan a los niños en el lugar de Mara:
 
-- ¿Cómo creen que se sentía la protagonista?
-- ¿Alguna vez te sentiste triste por qué se rieron de tu apariencia?
-- ¿Qué hubieran hecho ustedes si estuvieran en el lugar de Mara?
-- ¿Creen ustedes que es importante respetar el modo en que lucen sus compañeros? ¿Por qué?
+-   ¿Cómo creen que se sentía la protagonista?
+-   ¿Alguna vez te sentiste triste por qué se rieron de tu apariencia?
+-   ¿Qué hubieran hecho ustedes si estuvieran en el lugar de Mara?
+-   ¿Creen ustedes que es importante respetar el modo en que lucen sus compañeros? ¿Por qué?
 
 Posteriormente, se conformarán pequeños grupos con el fin de que puedan identificar acciones de la vida cotidiana con las cuales se sientan bien o cuáles no, qué sentimientos les generan esas actitudes y por qué. Para ello, se les preguntará:
 _¿Qué situaciones de tu casa te hacen sentir bien y cuáles te hacen sentir mal? ¿Y en la escuela?_

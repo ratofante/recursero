@@ -15,7 +15,7 @@ const root = new URL(Astro.request.url).origin;
 <!-- Sections -->
 <div class="flex flex-col text-lg">
 	<NavigationLink to="/" name="Inicio" leadingIcon="ion:home" />
-	<NavigationLink to="/" name="Historia" leadingIcon="ion:finger-print" />
+	<!-- <NavigationLink to="/" name="Historia" leadingIcon="ion:finger-print" /> -->
 	<Accordion>
 		<NavigationButton slot="trigger" name="Blog" leadingIcon="ion:md-bookmarks" trailingIcon="ion:chevron-down" />
 		<ul slot="content" class="pl-4">
@@ -31,8 +31,10 @@ const root = new URL(Astro.request.url).origin;
 			}
 		</ul>
 	</Accordion>
-	<NavigationLink to="/" name="Información" leadingIcon="ion:information-circle" />
-	<NavigationLink to="/" name="Contacto" leadingIcon="ion:md-contacts" />
+	<!-- <NavigationLink to="/" name="Información" leadingIcon="ion:information-circle" />
+	<NavigationLink to="/" name="Contacto" leadingIcon="ion:md-contacts" /> -->
+
+	<!-- Redes -->
 	<div class="border-slate-800 mt-6 border-t px-4 pt-8 dark:border-gray">
 		<div
 			class="mb-4 flex items-center gap-[2px] font-serif font-semibold leading-none lg:mb-0 lg:font-medium dark:text-white"
@@ -42,14 +44,19 @@ const root = new URL(Astro.request.url).origin;
 		<div class="gap-2 lg:flex">
 			<a href="mailto:nazarenasilvetti@gmail.com">
 				<div class="my-4 flex items-center gap-2 font-sans text-xs font-normal">
-					<Icon name="ion:mail-outline" width={20} height={20} class="lg:hidden" />
+					<Icon
+						name="ion:mail-outline"
+						width={20}
+						height={20}
+						class="lg:hidden dark:text-white dark:opacity-80"
+					/>
 					<Icon
 						name="ion:mail-outline"
 						width={28}
 						height={28}
 						class="hidden opacity-70 hover:opacity-100 lg:block dark:text-white"
 					/>
-					<span class="lg:hidden">nazarenasilvetti@gmail.com</span>
+					<span class="lg:hidden dark:text-white dark:opacity-80">nazarenasilvetti@gmail.com</span>
 				</div>
 			</a>
 			<a
@@ -58,14 +65,19 @@ const root = new URL(Astro.request.url).origin;
 				target="_blank"
 			>
 				<div class="my-4 flex items-center gap-2 font-sans text-xs font-normal">
-					<Icon name="ion:social-linkedin-outline" width={20} height={20} class="lg:hidden" />
+					<Icon
+						name="ion:social-linkedin-outline"
+						width={20}
+						height={20}
+						class="lg:hidden dark:text-white dark:opacity-80"
+					/>
 					<Icon
 						name="ion:social-linkedin-outline"
 						width={28}
 						height={28}
 						class="hidden opacity-70 hover:opacity-100 lg:block dark:text-white"
 					/>
-					<span class="lg:hidden">Nazarena Paula Silvetti</span>
+					<span class="lg:hidden dark:text-white dark:opacity-80">Nazarena Paula Silvetti</span>
 				</div>
 			</a>
 			<a
@@ -74,28 +86,21 @@ const root = new URL(Astro.request.url).origin;
 				target="_blank"
 			>
 				<div class="my-4 flex items-center gap-2 font-sans text-xs font-normal">
-					<Icon name="ion:logo-whatsapp" width={18} height={18} class="lg:hidden" />
+					<Icon
+						name="ion:logo-whatsapp"
+						width={18}
+						height={18}
+						class="lg:hidden dark:text-white dark:opacity-80"
+					/>
 					<Icon
 						name="ion:logo-whatsapp"
 						width={26}
 						height={26}
 						class="hidden opacity-70 hover:opacity-100 lg:block dark:text-white"
 					/>
-					<span class="lg:hidden">+54 9 11 7360-4520</span>
+					<span class="lg:hidden dark:text-white dark:opacity-80">+54 9 11 7360-4520</span>
 				</div>
 			</a>
-			<!-- <a href="/" rel="noopener noreferrer nofollow" target="_blank">
-				<div class="my-4 flex items-center gap-2 font-sans text-xs font-normal">
-					<Icon name="ion:logo-instagram" width={20} height={20} class="lg:hidden" />
-					<Icon
-						name="ion:logo-instagram"
-						width={27}
-						height={27}
-						class="hidden opacity-70 hover:opacity-100 lg:block dark:text-white"
-					/>
-					<span class="lg:hidden">@aulasposibles</span>
-				</div>
-			</a> -->
 		</div>
 	</div>
 </div>

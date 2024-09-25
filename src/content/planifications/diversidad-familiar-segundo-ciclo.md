@@ -4,7 +4,7 @@ ejes: ["convivencia-derechos", "genero-diversidad"]
 authors: ["Tatiana Cano", "Sol de la Iglesia", "Melina Villaroel"]
 target: "segundo ciclo"
 resumen: "Se analizan publicidades argentinas para identificar estereotipos familiares y de género. Las y los estudiantes reflexionan sobre la diversidad y re-crean las publicidades con una mirada inclusiva."
-cover: "/src/assets/images/blog__04.jpg"
+cover: "/src/assets/images/post__convivencia.jpg"
 coverAlt: "diversidad familiar (segundo ciclo)"
 ---
 

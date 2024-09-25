@@ -34,7 +34,7 @@
 		@apply my-4;
 	}
 	.post__content li {
-		@apply my-2 font-medium;
+		@apply my-2 list-inside list-disc;
 	}
 	.post__content img {
 		@apply my-4;
